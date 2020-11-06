@@ -1,6 +1,6 @@
 {
   "name": "memories",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "mengubah waktu pada artikel",
   "main": "./test/index.js",
   "repository": "https://github.com/wadahkode/memories",
