@@ -6,7 +6,7 @@
   "repository": "https://github.com/wadahkode/memories",
   "author": "wadahkode <mvp.dedefilaras@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "webpack": "^5.4.0",
