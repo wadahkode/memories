@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mengubah waktu pada artikel</title>
+</head>
+<body>
+    <article>
+        <h1>artikel 1</h1>
+        <time datetime="11/6/2020, 01:04:00"></time>
+    </article>
+    <article>
+        <h1>artikel 2</h1>
+        <time datetime="11/5/2020, 16:38:00"></time>
+    </article>
+    <article>
+        <h1>artikel 3</h1>
+        <time datetime="11/5/2020, 10:38:00"></time>
+    </article>
+    <script src="js/memories.min.js"></script>
+    <script>
+        let articleTime = document.querySelectorAll('time');
+
+        articleTime.forEach(time => {
+            let start = new Date(time.getAttribute('datetime').toString().replace(',','')),
+            refresh = setInterval(() => {
+                //time.innerHTML = getMemories(start, new Date());
+            }, 1000);
+            
+        });
+
+        function getMemories(start, end) {
+            const memories = new Memories(start, end);
+            
+            return memories.getMemoTime();
+        }
+    </script>
+</body>
+</html>
