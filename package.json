@@ -1,6 +1,6 @@
 {
   "name": "memories",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "mengubah waktu pada artikel",
   "main": "./test/index.js",
   "repository": "https://github.com/wadahkode/memories",
@@ -14,7 +14,7 @@
     "webpack-merge": "^5.3.0"
   },
   "scripts": {
-      "build": "webpack --config webpack.prod.js",
-      "start": "webpack --config webpack.dev.js --watch"
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack --config webpack.dev.js --watch"
   }
 }
