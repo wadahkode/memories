@@ -1,0 +1,21 @@
+body {
+    background: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    background: #fff;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+article > h1,
+article > h2,
+article > h3,
+article > h4,
+article > h5,
+article > h6 {
+    margin: 0;
+}
