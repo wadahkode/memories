@@ -13,9 +13,7 @@ articleTime.forEach(time => {
 
 let setCronJob = setInterval(async () => {
     let start = new Date("11/10/2022, 11:00:00");
-    if ((typeof cronJob != null)) {
-        cronJob.innerHTML = await getCronJob(start, new Date());
-    }
+    cronJob.innerHTML = await getCronJob(start, new Date());
 }, 1000);
 
 async function getCronJob(start,end) {
