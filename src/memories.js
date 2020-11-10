@@ -34,8 +34,12 @@ export default class Memories {
         
         if ((parseInt(h) == H)) {
             this.currentJob = "saatnya bekerja";
+            
+            return this.currentJob;
         } else {
             this.currentJob = "Menunggu...";
+            
+            return this.currentJob;
         }
     }
     
