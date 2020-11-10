@@ -12,14 +12,17 @@ articleTime.forEach(time => {
 });
 
 let setCronJob = setInterval(async () => {
-    
-    let start = new Date("11/10/2022, 11:00:00"),
-        time = await new Memories(start, new Date());
-        
-        if ((typeof cronJob != null)) {
-            cronJob.innerHTML = time.getCronJob();
-        }
+    let start = new Date("11/10/2022, 11:00:00");
+    if ((typeof cronJob != null)) {
+        cronJob.innerHTML = await getCronJob(start, new Date());
+    }
 }, 1000);
+
+async function getCronJob(start,end) {
+    const memories = new Memories(start,end);
+    
+    return memories.getCronJob();
+}
 
 async function getMemories(start, end) {
     const memories = new Memories(start, end);
