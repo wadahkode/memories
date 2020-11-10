@@ -11,7 +11,7 @@ module.exports = {
     ],
     output: {
         filename: '[name].min.js',
-        path: path.resolve(__dirname, 'dist/js'),
+        path: path.resolve(__dirname, 'examples/dist/js'),
     },
     performance: {
         hints: 'warning',

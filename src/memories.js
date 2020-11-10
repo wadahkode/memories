@@ -10,13 +10,33 @@ export default class Memories {
     constructor(start, end) {
         this.start = start;
         this.end = end;
-        this.currentTime = false;
+        this.currentTime = "";
+        this.currentJob = "";
         this.day = 0;
         this.month = 0;
         this.startCalDate = this.setToLocaleDateString(this.start).split('/');
         this.startCalTime = this.setToLocaleTimeString(this.start).split(/:| /);
         this.endCalDate = this.setToLocaleDateString(this.end).split('/');
         this.endCalTime = this.setToLocaleTimeString(this.end).split(/:| /);
+    }
+    
+    getCronJob() {
+        let [h,i,s] = this.endCalTime,
+            [H,I,S] = this.startCalTime,
+            experied = [];
+            
+        experied.push({
+            day: parseInt(this.startCalDate[0]),
+            month: parseInt(this.startCalDate[1]),
+            year: parseInt(this.startCalDate[2])
+        });
+        
+        
+        if ((parseInt(h) == H)) {
+            this.currentJob = "saatnya bekerja";
+        } else {
+            this.currentJob = "Menunggu...";
+        }
     }
     
     getMemoTime() {
