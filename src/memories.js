@@ -79,14 +79,13 @@ export default class Memories {
                 }
                 // minutes
                 else if ((parseInt(h) == H) && (parseInt(i) != I)) {
-                    current = (i > I) && i - I;
+                    current = (parseInt(i) > I) && parseInt(i) - I;
                     
                     this.currentTime = (current < minutes) && parseInt(current) + ' menit yang lalu';
                 }
                 // minutes or hour
                 else if ((parseInt(h) != H)) {
-                    current = (i >= I) && (i - I) + minutes;
-                    
+                    current = (parseInt(i) >= I) && (parseInt(i) - I) + minutes;
                     // jika jam tidak sama dan menit sudah lebih dari 60,
                     // maka jam sekarang dikurangi jam sebelumnya.
                     if ((parseInt(h) > H) && (parseInt(h) < hour) && (current >= minutes)) {
@@ -106,22 +105,28 @@ export default class Memories {
             } else {
                 let day = (this.day + parseInt(this.endCalDate[1])) - (this.day + parseInt(this.startCalDate[1])),
                     currentMinutes;
-                    
+                
                 if (day == 1) {
-                    if ((parseInt(h) > H)) {
+                    if ((parseInt(h) > parseInt(H))) {
                         current = ((hour + parseInt(h)) - parseInt(H));
-                        
                         if (current > hour) {
                             this.currentTime = ((parseInt(this.endCalDate[1]) > this.startCalDate[1]) && (parseInt(this.endCalDate[1]) - this.startCalDate[1]) + ' hari yang lalu');
                         }
-                    }
-                    current = ((hour + parseInt(h)) - parseInt(H));
-                    currentMinutes = (parseInt(minutes - I) + parseInt(i));
-                    
-                    if ((current == hour) && (currentMinutes) > minutes) {
-                        this.currentTime = (Math.floor(hour % current) + 1) + ' hari yang lalu';
                     } else {
-                        this.currentTime = ((current) - 1) + ' jam yang lalu';
+                        current = ((hour + parseInt(h)) - parseInt(H));
+                        currentMinutes = (parseInt(minutes - I) + parseInt(i));
+                        
+                        if ((current == hour) && (currentMinutes) > minutes) {
+                            this.currentTime = (Math.floor(hour % current) + 1) + ' hari yang lalu';
+                        } else {
+                            //current = (Math.floor(hour % current));
+                            
+                            if (parseInt(currentMinutes) == minutes) {
+                                this.currentTime = (Math.floor(hour % current) + 1) + ' hari yang lalu';
+                            } else {
+                                this.currentTime = ((current) - 1) + ' jam yang lalu';
+                            }
+                        }
                     }
                 } else {
                     this.getOnlyDate(this.month, this.day);
