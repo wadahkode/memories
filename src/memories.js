@@ -78,15 +78,17 @@ export default class Memories {
         this.day = day;
         this.month = month;
         
-        if (this.endCalDate.includes(M) && this.endCalDate.includes(Y)) {
-            this.getOnlyTime(24,60,60,this.endCalDate.includes(M), this.endCalDate.includes(D));
+        ((m == M) && (y == Y)) ? this.getOnlyTime(24,60,60,(m == M), (d == D)) : this.getOnlyDate(month,day);
+        
+        return this.currentTime;
+        // if (this.endCalDate.includes(M) && this.endCalDate.includes(Y)) {
+        //     this.getOnlyTime(24,60,60,this.endCalDate.includes(M), this.endCalDate.includes(D));
             
-            return this.currentTime;
-        } else {
-            this.getOnlyDate(month, day);
-            
-            return this.currentTime;
-        }
+        //     return this.currentTime;
+        // } else {
+        //     this.getOnlyDate(month, day);
+        //     return this.currentTime;
+        // }
     }
     
     getOnlyTime(hour, minutes, seconds, onMonth = false, onDay = false) {
@@ -182,6 +184,8 @@ export default class Memories {
                 this.currentTime = this.getWeekAgo(2);
             } else if (current > 21 && current < day) {
                 this.currentTime = this.getWeekAgo(3);
+            } else {
+                this.currentTime = (m - M) + ' bulan yang lalu';
             }
         } else if ((parseInt(m) == M) && (parseInt(d) > D) && (parseInt(y) == Y)) {
             current = (((d - D) + day) * (m - M));
@@ -195,6 +199,8 @@ export default class Memories {
                 this.currentTime = this.getWeekAgo(2);
             } else if (current >= 21 && current < day) {
                 this.currentTime = this.getWeekAgo(3);
+            } else {
+                this.currentTime = (m - M) + ' bulan yang lalu';
             }
         }
         else {
