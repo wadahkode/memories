@@ -78,17 +78,17 @@ export default class Memories {
         this.day = day;
         this.month = month;
         
-        ((m == M) && (y == Y)) ? this.getOnlyTime(24,60,60,(m == M), (d == D)) : this.getOnlyDate(month,day);
+        // ((parseInt(m) == M) && (parseInt(y) == Y)) ? this.getOnlyTime(24,60,60,(parseInt(m) == M), (parseInt(d) == D)) : this.getOnlyDate(month,day);
         
-        return this.currentTime;
-        // if (this.endCalDate.includes(M) && this.endCalDate.includes(Y)) {
-        //     this.getOnlyTime(24,60,60,this.endCalDate.includes(M), this.endCalDate.includes(D));
+        if (parseInt(m) == parseInt(M) && parseInt(y) == parseInt(Y)) {
+            this.getOnlyTime(24,60,60, parseInt(m) == parseInt(M), parseInt(d) == parseInt(D));
             
-        //     return this.currentTime;
-        // } else {
-        //     this.getOnlyDate(month, day);
-        //     return this.currentTime;
-        // }
+            return this.currentTime;
+        } else {
+            this.getOnlyDate(month, day);
+            
+            return this.currentTime;
+        }
     }
     
     getOnlyTime(hour, minutes, seconds, onMonth = false, onDay = false) {
@@ -100,31 +100,50 @@ export default class Memories {
             if (onDay) {
                 //console.log((parseInt(i) == I));
                 // seconds
-                if ((parseInt(h) == H) && (parseInt(i) == I) && (parseInt(s) != S)) {
+                if ((parseInt(h) == parseInt(H)) && (parseInt(i) == parseInt(I)) && (parseInt(s) != parseInt(S))) {
                     this.currentTime = parseInt(s) + ' detik yang lalu';
                 }
                 // minutes
-                else if ((parseInt(h) == H) && (parseInt(i) != I)) {
-                    current = (parseInt(i) > I) && parseInt(i) - I;
+                else if ((parseInt(h) == parseInt(H)) && (parseInt(i) != parseInt(I))) {
+                    current = (parseInt(i) > parseInt(I)) && parseInt(i) - parseInt(I);
                     
                     this.currentTime = (current < minutes) && parseInt(current) + ' menit yang lalu';
                 }
                 // minutes or hour
-                else if ((parseInt(h) != H)) {
-                    current = (parseInt(i) >= I) && (parseInt(i) - I) + minutes;
-                    // jika jam tidak sama dan menit sudah lebih dari 60,
-                    // maka jam sekarang dikurangi jam sebelumnya.
-                    if ((parseInt(h) > H) && (parseInt(h) < hour) && (current >= minutes)) {
-                        this.currentTime = (h - H) + ' jam yang lalu';
-                    } else {
-                        current = (parseInt(I) > i) && (parseInt(minutes - I) + parseInt(i));
-                        
-                        // jika jam sekarang lebih dari jam sebelumnya tetapi
-                        // menitnya masih dibawah 60 maka tampilkan menit yang sudah berlalu
-                        if ((current < 60) && (parseInt(h) > H)) {
-                            this.currentTime = (current) + ' menit yang lalu';
+                else if ((parseInt(h) != parseInt(H))) {
+                    current = (parseInt(i) >= parseInt(I)) && (parseInt(i) - parseInt(I)) + minutes;
+                    
+                    if (current) {
+                        // jika jam tidak sama dan menit sudah lebih dari 60,
+                        // maka jam sekarang dikurangi jam sebelumnya.
+                        if ((parseInt(h) > parseInt(H)) && (parseInt(h) < hour) && (current >= minutes)) {
+                            this.currentTime = (h - H) + ' jam yang lalu';
                         } else {
-                            this.currentTime = (hour - parseInt(H - h)) + ' jam yang lalu';
+                            current = (parseInt(I) > i) && (parseInt(minutes - I) + parseInt(i));
+                            
+                            // jika jam sekarang lebih dari jam sebelumnya tetapi
+                            // menitnya masih dibawah 60 maka tampilkan menit yang sudah berlalu
+                            if ((current < 60) && (parseInt(h) > H)) {
+                                this.currentTime = (current) + ' menit yang lalu';
+                            } else {
+                                this.currentTime = (hour - parseInt(H - h)) + ' jam yang lalu';
+                            }
+                        }
+                    } else {
+                        current = (parseInt(i) <= parseInt(I)) && (parseInt(I) - parseInt(i)) + minutes;
+                        
+                        if ((parseInt(h) > parseInt(H)) && (parseInt(h) < hour) && (current >= minutes)) {
+                            this.currentTime = (h - H) + ' jam yang lalu';
+                        } else {
+                            current = (parseInt(I) > i) && (parseInt(minutes - I) + parseInt(i));
+                            
+                            // jika jam sekarang lebih dari jam sebelumnya tetapi
+                            // menitnya masih dibawah 60 maka tampilkan menit yang sudah berlalu
+                            if ((current < 60) && (parseInt(h) > H)) {
+                                this.currentTime = (current) + ' menit yang lalu';
+                            } else {
+                                this.currentTime = (hour - parseInt(H - h)) + ' jam yang lalu';
+                            }
                         }
                     }
                 }
@@ -168,29 +187,16 @@ export default class Memories {
             [M,D,Y] = this.startCalDate,
             current;
         
-        if ((parseInt(m) > M) && (parseInt(d) >= D) && (parseInt(y) == Y)) {
+        if ((parseInt(m) > parseInt(M)) && (parseInt(d) >= parseInt(D)) && (parseInt(y) == parseInt(Y))) {
             current = (((d - D) + day) * (m - M));
             
             if (current >= month) {
                 this.currentTime = (m - M) + ' bulan yang lalu';
             }
-        } else if ((parseInt(m) > M) && (parseInt(d) < D) && (parseInt(y) == Y)) {
-            current = (((d - D) + day) * (m - M));
-            //this.currentTime = (current) + ' hari yang lalu';
-            
-            if (current > 7 && current < 14) {
-                this.currentTime = this.getWeekAgo(1);
-            } else if (current > 14 && current < 21) {
-                this.currentTime = this.getWeekAgo(2);
-            } else if (current > 21 && current < day) {
-                this.currentTime = this.getWeekAgo(3);
-            } else {
-                this.currentTime = (m - M) + ' bulan yang lalu';
-            }
-        } else if ((parseInt(m) == M) && (parseInt(d) > D) && (parseInt(y) == Y)) {
-            current = (((d - D) + day) * (m - M));
-            current = ((current) + (d - D));
-            
+        } else if ((parseInt(m) > parseInt(M)) && (parseInt(d) < parseInt(D)) && (parseInt(y) == parseInt(Y))) {
+            //
+            current = (((parseInt(D) - parseInt(d)) + day) * (parseInt(m) - parseInt(M)));
+            current = ((current) + (parseInt(D) - parseInt(d)));
             if (current < 7) {
                 this.currentTime = (current) + ' hari yang lalu';
             } else if (current >= 7 && current < 14) {
@@ -202,14 +208,28 @@ export default class Memories {
             } else {
                 this.currentTime = (m - M) + ' bulan yang lalu';
             }
-        }
-        else {
+        } else if ((parseInt(m) == parseInt(M)) && (parseInt(d) > parseInt(D)) && (parseInt(y) == parseInt(Y))) {
+            current = (((parseInt(d) - parseInt(D)) + day) * (parseInt(m) - parseInt(M)));
+            current = ((current) + (d - D));
+            
+            //console.log(current);
+            if (current < 7) {
+                this.currentTime = (current) + ' hari yang lalu';
+            } else if (current >= 7 && current < 14) {
+                this.currentTime = this.getWeekAgo(1);
+            } else if (current >= 14 && current < 21) {
+                this.currentTime = this.getWeekAgo(2);
+            } else if (current >= 21 && current < day) {
+                this.currentTime = this.getWeekAgo(3);
+            } else {
+                this.currentTime = (m - M) + ' bulan yang lalu';
+            }
+        } else {
             if (this.endCalDate.includes(M) && this.endCalDate.includes(D)) {
                 current = (month - M) + parseInt(m);
                 this.currentTime = (current == month) && (y - Y) + ' tahun yang lalu';
             }
             current = (month - M) + parseInt(m);
-            
             this.currentTime = (current >= 12) ? (y - Y) + ' tahun yang lalu' : (current) + ' bulan yang lalu';
         }
     }
