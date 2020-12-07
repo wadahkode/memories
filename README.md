@@ -2,14 +2,29 @@
 
 Mengubah waktu standar menjadi waktu moment.
 
-### Syarat
+### Mulai cepat
+
+```html
+...
+<time datetime="12/7/2020, 16:11:00"></time>
+<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.0.0-rc/build/memories.min.js" integrity="sha256-tFDbBVD3xeFxeGFAclY7cHQ++BrfEJvo2woVGMwa1K4=" crossorigin="anonymous"></script>
+...
+```
+
+### Manual
+
+Untuk melakukan perubahan secara manual baca petunjuk dibawah ini:
+
+### syarat
+
 <ul>
     <li>npm sudah terinstall</li>
     <li>webpack sudah terinstall</li>
 </ul>
 
-### Melihat perubahan
+### Mengunduh repository dan melihat perubahan
 
+    $ git clone https://github.com/wadahkode/memories.git
     $ yarn start
     
 ### Build

@@ -251,4 +251,4 @@ class Memories {
     }
 }
 
-exports.Memories = Memories;
+module.exports = Memories;
