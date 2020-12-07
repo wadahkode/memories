@@ -6,7 +6,7 @@
  * @author wadahkode <mvp.dedefilaras@gmail.com>
  * @since version 1.0.0
  */
-export default class Memories {
+class Memories {
     constructor(start, end) {
         this.start = start;
         this.end = end;
@@ -250,3 +250,5 @@ export default class Memories {
         });
     }
 }
+
+exports.Memories = Memories;

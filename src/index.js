@@ -1,4 +1,4 @@
-import Memories from './memories';
+const Memories = require('./memories');
 
 let articleTime = document.querySelectorAll('time'),
     cronJob = document.querySelector('#cron-job');
@@ -16,15 +16,16 @@ let setCronJob = setInterval(async () => {
     cronJob.innerHTML = await getCronJob(start, new Date());
 }, 1000);
 
+// Mengatur cronjob
 async function getCronJob(start,end) {
     const memories = new Memories(start,end);
     
     return memories.getCronJob();
 }
 
+// Mengatur waktu standar menjadi waktu moment
 async function getMemories(start, end) {
     const memories = new Memories(start, end);
     
     return memories.getMemoTime();
 }
-//exports.default = Memories;

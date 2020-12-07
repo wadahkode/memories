@@ -2,8 +2,9 @@
   "name": "@wadahkode/memories",
   "version": "1.0.0",
   "description": "Mengubah waktu standar menjadi waktu moment",
-  "main": "./src/index.js",
+  "main": "./build/memories.min.js",
   "directories": {
+    "build": " build",
     "example": "examples",
     "test": "test"
   },
