@@ -1,3 +1,3 @@
-const Memories = require('../public/js/memories.min');
+const Memories = require('../examples/dist/js/memories.min');
 
 console.log(Memories.default);
