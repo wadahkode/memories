@@ -17,11 +17,11 @@ Mengubah waktu standar menjadi waktu moment.
 const Memories = require('@wadahkode/memories);
 
 const article = new Memories(
-  new Date("1/1/1990, 12:00:00") // start
+  new Date("1/1/1990, 12:00:00"), // start
   new Date() // end
 );
 
-return article.getMemoTime();
+console.log(article.getMemoTime());
 ```
 
 
