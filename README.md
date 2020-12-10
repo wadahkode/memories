@@ -14,7 +14,7 @@ Mengubah waktu standar menjadi waktu moment.
 ### Cara penggunaan pada lingkungan nodejs
 
 ```javascript
-const Memories = require('@wadahkode/memories);
+const Memories = require('@wadahkode/memories');
 
 const article = new Memories(
   new Date("1/1/1990, 12:00:00"), // start
