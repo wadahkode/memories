@@ -1,3 +1,10 @@
+<a href="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.1/">
+    <img src="https://img.shields.io/jsdelivr/npm/hm/@wadahkode/memories?style=flat-square" alt="jsDelivr Downloads"/>
+</a>
+<a href="https://www.npmjs.com/package/@wadahkode/memories">
+    <img src="https://img.shields.io/npm/dw/@wadahkode/memories?style=flat-square" alt="NPM Downloads"/>
+</a>
+
 ### Memories
 
 Mengubah waktu standar menjadi waktu moment.
