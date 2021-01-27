@@ -8,7 +8,6 @@ articleTime.forEach(time => {
     refresh = setInterval(async () => {
         time.innerHTML = await getMemories(start, new Date());
     }, 10);
-    
 });
 
 let setCronJob = setInterval(async () => {
@@ -20,12 +19,12 @@ let setCronJob = setInterval(async () => {
 async function getCronJob(start,end) {
     const memories = new Memories(start,end);
     
-    return memories.getCronJob();
+    return await memories.getCronJob();
 }
 
 // Mengatur waktu standar menjadi waktu moment
 async function getMemories(start, end) {
     const memories = new Memories(start, end);
     
-    return memories.getMemoTime();
+    return await memories.getMemoTime();
 }
