@@ -14,7 +14,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack --config webpack.dev.js --watch",
-    "test": "node ./test/index.js"
+    "test": "node ./tests/index.test.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/wadahkode/memories#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.18.0",
     "webpack": "^5.10.0",
     "webpack-cli": "^4.2.0",
     "webpack-merge": "^5.4.0"

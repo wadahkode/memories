@@ -1,47 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mengubah waktu pada artikel</title>
-    <link rel="stylesheet" href="examples/dist/css/style.css" type="text/css" media="all" />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="examples/dist/css/style.css"
+      type="text/css"
+      media="all"
+    />
+  </head>
+  <body>
     <div class="container">
+      <div class="profile">
+        <img
+          src="https://scontent.fsrg3-1.fna.fbcdn.net/v/t1.0-9/38562_102830739774500_4117273_n.jpg?_nc_cat=101&ccb=2&_nc_sid=ba80b0&_nc_eui2=AeE3BEiy5Y_h4Gb_RhCZGTGIlc3OiHmHlB-Vzc6IeYeUH-EvlUOl7XjqRNi78C9xO5xX6lsD61pXSEWfqzjZql7R&_nc_ohc=4MFgetVu0BoAX__RYrO&_nc_ht=scontent.fsrg3-1.fna&oh=d28e06635ece4b0469152c9e6b65a4c3&oe=6042ED26"
+        />
+        <ul>
+          <li>Nama: Ayus Irfang Filaras</li>
+          <li>Tgl lahir: 18-08-1991</li>
+          <li>Umur: <time datetime="8/18/1991" prefix="birthday"></time></li>
+        </ul>
+      </div>
+
+      <div>
+        <h1 class="text-white">Artikel</h1>
         <article class="card">
-            <div class="card-header">
-                <h1>artikel 1</h1>
-                <sub><time datetime="11/31/2020, 12:15:00"></time></sub>
-            </div>
-            <div class="card-body">
-                Perjalanan ini terasa sangat menyedihkan kala engkau tak duduk disampingku kawan
-            </div>
+          <div class="card-header">
+            <h1>artikel 1</h1>
+            <sub><time datetime="2/4/2021, 10:13:00"></time></sub>
+          </div>
+          <div class="card-body">
+            Perjalanan ini terasa sangat menyedihkan kala engkau tak duduk
+            disampingku kawan
+          </div>
         </article>
         <article class="card">
-            <div class="card-header">
-                <h1>artikel 2</h1>
-                <sub>
-                    <time datetime="11/31/2020, 01:07:00"></time>
-                </sub>
-            </div>
-            <div class="card-body">
-                Mengapa kau tak membalas cintaku, mengapa engkau abaikan rasaku
-            </div>
+          <div class="card-header">
+            <h1>artikel 2</h1>
+            <sub>
+              <time datetime="2/4/2021, 01:07:00"></time>
+            </sub>
+          </div>
+          <div class="card-body">
+            Mengapa kau tak membalas cintaku, mengapa engkau abaikan rasaku
+          </div>
         </article>
         <article class="card">
-            <div class="card-header">
-                <h1>artikel 3</h1>
-                <sub>
-                    <time datetime="11/9/2020, 10:02:00"></time>
-                </sub>
-            </div>
-            <div class="card-body">
-                Ketika malam telah tiba, aku menunggu, aku menantimu
-            </div>
+          <div class="card-header">
+            <h1>artikel 3</h1>
+            <sub>
+              <time datetime="2/3/2021, 10:02:00"></time>
+            </sub>
+          </div>
+          <div class="card-body">
+            Ketika malam telah tiba, aku menunggu, aku menantimu
+          </div>
         </article>
+        <article class="card">
+          <div class="card-header">
+            <h1>artikel 4</h1>
+            <sub>
+              <time datetime="1/10/2021, 10:02:00"></time>
+            </sub>
+          </div>
+          <div class="card-body">Tiba - tiba cinta datang kepadaku</div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <h1>artikel 5</h1>
+            <sub>
+              <time datetime="1/1/2021, 10:02:00"></time>
+            </sub>
+          </div>
+          <div class="card-body">Sungguhku terpaku dalam lamunan</div>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <h1>artikel 6</h1>
+            <sub>
+              <time datetime="2/3/2020, 10:02:00"></time>
+            </sub>
+          </div>
+          <div class="card-body">Ingin kucongkel keluar indah bola matamu</div>
+        </article>
+      </div>
+      <footer class="text-center">&copy; @wadahkode/memories 2020</footer>
     </div>
+
     <!--<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.1/build/memories.min.js"></script>-->
     <script src="build/memories.min.js"></script>
-</body>
+  </body>
 </html>

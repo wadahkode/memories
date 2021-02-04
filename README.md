@@ -21,17 +21,40 @@ Mengubah waktu standar menjadi waktu moment.
 ### Cara penggunaan pada lingkungan nodejs
 
 ```javascript
-const Memories = require('@wadahkode/memories');
+const memories = require("@wadahkode/memories");
+const options = {
+  datetime: "8/18/1991, 05:30:00",
+};
 
-const article = new Memories(
-  new Date("1/1/1990, 12:00:00"), // start
-  new Date() // end
-);
+const moment = new memories(options);
 
-console.log(article.getMemoTime());
+/**
+ * Debug
+ *
+ *? Saat ini hanya dapat mencetak properti kelas diterminal atau cmd,
+ *? dan mencetak error ketika parameter untuk deklarasi kelas tidak diisi.
+ *
+ */
+moment.set("isDebug", false);
+
+const data = {
+  name: "Ayus Irfang Filaras",
+  //? Tetapkan keluaran sebagai hari kelahiran atau waktu yang sudah berlalu.
+  // umur: moment.timeAgo(),
+  umur: moment.timeAgo("birthday", {
+    y: "tahun",
+    m: "bulan",
+    d: "hari",
+    w: "minggu",
+    h: "jam",
+    i: "menit",
+    s: "detik",
+    n: "baru saja",
+  }),
+};
+
+console.log("Nama: %s\nUmur: %s", data.name, data.umur);
 ```
-
-
 
 ### Manual
 
@@ -47,11 +70,12 @@ Untuk melakukan perubahan secara manual baca petunjuk dibawah ini:
 ### Mengunduh repository dan melihat perubahan
 
     $ git clone https://github.com/wadahkode/memories.git
-    $ yarn start
-    
+    $ npm install
+    $ npm run start
+
 ### Build
 
-    $ yarn build
+    $ npm run build
 
 ### catatan
 
