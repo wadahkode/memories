@@ -1,0 +1,10 @@
+{
+  "y": "year",
+  "m": "month",
+  "d": "day",
+  "w": "week",
+  "h": "hour",
+  "i": "minute",
+  "s": "second",
+  "n": "just now"
+}
