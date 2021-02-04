@@ -32,6 +32,49 @@ class Memories {
   }
 
   /**
+   * Menghitung waktu yang sudah berlalu sejak sekarang
+   * @param  {String|undefined} type "day" | "minute" | "second"
+   * @return {Number}      Return ms jika parameter type tidak di isi
+   */
+  delta(type = String | undefined) {
+    let delta = Date.now() - dateParser(this.datetime);
+    if (type === undefined) return delta;
+
+    delta /= 1000;
+    if (type === "second") return Math.floor(delta);
+    if (type === "minute") return Math.floor(delta / 60);
+    if (type === "hour") return Math.floor(delta / 3600);
+    if (type === "day") return Math.floor(delta / (3600 * 24));
+    if (type === "month") return Math.floor(delta / (3600 * 24 * 30));
+    if (type === "year") return Math.floor(delta / (3600 * 24 * 30 * 12));
+
+    throw new Error(
+      'Parameter "type" hanya menerima undefined atau string seperti (second, minute, hour, day, month). Tetapi malah dapat:' +
+        type
+    );
+  }
+
+  /**
+   * Metode untuk menentukan tanggal expired berdasarkan
+   * tanggal yang telah ditentukan.
+   *
+   * @param {*} expired Number
+   * @param {*} unknown String
+   */
+  expired(expired = Number, unknown = String) {
+    let timeNow = this.timeAgo(),
+      status = false;
+
+    if (timeNow.match(unknown)) {
+      let n = timeNow.match(/\d+/g);
+      if (n !== null) {
+        n.map((i) => (status = i >= expired));
+      }
+    }
+    return status;
+  }
+
+  /**
    * Mencetak waktu menjadi waktu yang sudah berlalu,
    * jika kedua parameter dikosongkan, maka sistem akan menjalankan pengaturan bawaan.
    *
