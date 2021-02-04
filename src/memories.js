@@ -50,14 +50,14 @@ class Memories {
 
     const moment = (point, name) => {
       const label = {
-        h: `${point} ${prefix != "birthday" ? "hour ago" : suffix[name]}`,
-        i: `${point} ${prefix != "birthday" ? "minute ago" : suffix[name]}`,
-        s: `${point} ${prefix != "birthday" ? "second ago" : suffix[name]}`,
-        y: `${point} ${prefix != "birthday" ? "year ago" : suffix[name]}`,
-        m: `${point} ${prefix != "birthday" ? "month ago" : suffix[name]}`,
-        d: `${point} ${prefix != "birthday" ? "day ago" : suffix[name]}`,
-        w: `${point} ${prefix != "birthday" ? "week ago" : suffix[name]}`,
-        n: `${point < 1 && prefix != "birthday" ? "baru saja" : suffix[name]}`,
+        h: `${point} ${prefix !== "birthday" ? "hour ago" : suffix[name]}`,
+        i: `${point} ${prefix !== "birthday" ? "minute ago" : suffix[name]}`,
+        s: `${point} ${prefix !== "birthday" ? "second ago" : suffix[name]}`,
+        y: `${point} ${prefix !== "birthday" ? "year ago" : suffix[name]}`,
+        m: `${point} ${prefix !== "birthday" ? "month ago" : suffix[name]}`,
+        d: `${point} ${prefix !== "birthday" ? "day ago" : suffix[name]}`,
+        w: `${point} ${prefix !== "birthday" ? "week ago" : suffix[name]}`,
+        n: `${point < 1 && prefix !== "birthday" ? "baru saja" : suffix[name]}`,
       };
       return label[name];
     };
@@ -148,10 +148,10 @@ class Memories {
 
     switch (name) {
       case "isDebug":
-        if (typeof value == "boolean" && value == true) {
+        if (value === true) {
           delete this.prop;
           console.log(
-            this.hasOwnProperty("datetime") == false ? warning.noProp : this
+            this.hasOwnProperty("datetime") === false ? warning.noProp : this
           );
         } else {
           delete this.prop;
@@ -159,7 +159,7 @@ class Memories {
         break;
 
       default:
-        if (typeof value == "function") {
+        if (typeof value === "function") {
           console.warn(warning.isFunction);
           return this;
         } else {
