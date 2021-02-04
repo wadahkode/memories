@@ -57,8 +57,9 @@ class Memories {
   }
 
   /**
-   * Metode untuk menentukan tanggal expired berdasarkan
-   * tanggal yang telah ditentukan.
+   * Expired Time
+   *
+   * Metode yang digunakan untuk menentukan waktu expired.
    *
    * @param {*} unknown String
    */
