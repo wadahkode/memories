@@ -24,6 +24,7 @@ Atur isi prefix dengan birthday atau expired.
 
 ```javascript
 const memories = require("@wadahkode/memories");
+const moment = new memories();
 /**
  * Sistem Debugging
  *
