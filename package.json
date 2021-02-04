@@ -6,6 +6,7 @@
   "files": [
     "build",
     "src",
+    "CHANGELOG.md",
     "README.md",
     "LICENSE",
     "package.json"

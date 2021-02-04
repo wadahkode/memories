@@ -15,12 +15,21 @@ article.forEach((time) => {
   };
 
   const refresh = setInterval(() => {
-    return getMemories(options, prefix).then((response) => {
-      if (response) {
-        time.innerHTML = response;
+    if (prefix == "expired") {
+      let statusExpired = getExpired(options);
+      if (statusExpired) {
+        time.innerHTML = "expired: <b>sudah kadaluarsa</b>";
+      } else {
+        time.innerHTML = "expired: <b>" + time.dateTime + "</b>";
       }
-      // clearInterval(refresh);
-    });
+    } else {
+      return getMemories(options, prefix).then((response) => {
+        if (response) {
+          time.innerHTML = response;
+        }
+        // clearInterval(refresh);
+      });
+    }
   }, 10);
 });
 
@@ -41,4 +50,11 @@ async function getMemories(options = {}, prefix) {
     });
   }
   return await moment.timeAgo();
+}
+
+// Mengatur waktu standar menjadi waktu moment
+function getExpired(options = {}) {
+  const moment = new memories(options);
+
+  return moment.expired("in day");
 }

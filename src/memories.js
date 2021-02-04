@@ -13,9 +13,10 @@ const dateParser = require("./dateParser");
  */
 class Memories {
   /**
-   * @param {*} prop Object | Array
+   * @param {*} prop Object | Array | undefined
+   * @param {*} isDebug boolean
    */
-  constructor(prop = Object | Array | undefined, isDebug = true) {
+  constructor(prop = Object | Array | undefined, isDebug = false) {
     this.isDebug = isDebug;
     this.prop = prop;
 
@@ -26,8 +27,47 @@ class Memories {
         this[name] = prop[name];
       }
     } else {
-      return this.execute(isDebug);
+      //
     }
+  }
+
+  /**
+   * Menghitung waktu yang sudah berlalu sejak sekarang
+   *
+   * @author StefansArya
+   * @param  {String|undefined} type "day" | "minute" | "second"
+   * @return {Number}      Return ms jika parameter type tidak di isi
+   */
+  delta(type = String | undefined) {
+    let delta = Date.now() - dateParser(this.datetime);
+    if (type === undefined) return delta;
+
+    delta /= 1000;
+    if (type === "second") return Math.floor(delta);
+    if (type === "minute") return Math.floor(delta / 60);
+    if (type === "hour") return Math.floor(delta / 3600);
+    if (type === "day") return Math.floor(delta / (3600 * 24));
+    if (type === "month") return Math.floor(delta / (3600 * 24 * 30));
+    if (type === "year") return Math.floor(delta / (3600 * 24 * 30 * 12));
+
+    throw new Error(
+      'Parameter "type" hanya menerima undefined atau string seperti (second, minute, hour, day, month). Tetapi malah dapat:' +
+        type
+    );
+  }
+
+  /**
+   * Expired Time
+   *
+   * Metode yang digunakan untuk menentukan waktu expired.
+   *
+   * @param {*} unknown String
+   */
+  expired(unknown = String) {
+    let periode = dateParser(this.datetime),
+      unPeriode = dateParser(new Date());
+
+    return Math.floor((periode - unPeriode) / this.timeListAgo(unknown)) < 1;
   }
 
   /**
@@ -38,6 +78,17 @@ class Memories {
    * @param {*} suffix object
    */
   timeAgo(prefix = "", suffix = {}) {
+    // check property datetime
+    if (this.hasOwnProperty("datetime") == false) {
+      this.execute(this.isDebug, this.warning.noProp("datetime"));
+    }
+
+    for (let name in this) {
+      if (typeof this[name] == "function") {
+        this.execute(this.isDebug, this.warning.isFunction(name));
+      }
+    }
+
     const periode = dateParser(new Date());
     const unPeriode = dateParser(this.datetime);
     const second = 1000,
@@ -57,7 +108,7 @@ class Memories {
         m: `${point} ${prefix !== "birthday" ? "month ago" : suffix[name]}`,
         d: `${point} ${prefix !== "birthday" ? "day ago" : suffix[name]}`,
         w: `${point} ${prefix !== "birthday" ? "week ago" : suffix[name]}`,
-        n: `${point < 1 && prefix !== "birthday" ? "baru saja" : suffix[name]}`,
+        n: `${point < 1 && prefix !== "birthday" ? "just now" : suffix[name]}`,
       };
       return label[name];
     };
@@ -86,51 +137,47 @@ class Memories {
     return parsed;
   }
 
-  /**
-   * Menghitung waktu yang sudah berlalu sejak sekarang
-   * @param  {String|undefined} type "day" | "minute" | "second"
-   * @return {Number}      Return ms jika parameter type tidak di isi
-   */
-  delta(type = String | undefined){
-    let delta = Date.now() - dateParser(this.datetime);
-    if(type === undefined) return delta;
+  timeListAgo(name = String) {
+    const SECOND = 1000,
+      MINUTE = 60 * SECOND,
+      HOUR = 60 * MINUTE,
+      DAY = HOUR * 24,
+      WEEK = DAY * 7,
+      MONTH = DAY * 30,
+      YEAR = DAY * 365;
 
-    delta /= 1000;
-    if(type === "second") return Math.floor(delta);
-    if(type === "minute")
-      return Math.floor(delta / 60);
-    if(type === "hour")
-      return Math.floor(delta / 3600);
-    if(type === "day")
-      return Math.floor(delta / (3600 * 24));
-    if(type === "month")
-      return Math.floor(delta / (3600 * 24 * 30));
-    if(type === "year")
-      return Math.floor(delta / (3600 * 24 * 30 * 12));
+    const timelist = {
+      "in second": SECOND,
+      second: SECOND,
+      "in minute": MINUTE,
+      minute: MINUTE,
+      "in hour": HOUR,
+      hour: HOUR,
+      "in day": DAY,
+      day: DAY,
+      "in week": WEEK,
+      week: WEEK,
+      "in month": MONTH,
+      month: MONTH,
+      "in year": YEAR,
+      year: YEAR,
+    };
 
-    throw new Error('Parameter "type" hanya menerima undefined atau string seperti (second, minute, hour, day, month). Tetapi malah dapat:'+type);
+    return timelist[name];
   }
 
   /**
-   * Untuk memberi pesan kesalahan jika properti kelas tidak diisi
-   * dan sistem debug telah dinyalakan
+   * Untuk memberi pesan kesalahan jika properti datetime tidak dapat ditemukan
+   * dan sistem debug telah dinyalakan, atau keluarkan program.
    *
    * @param {*} isDebug boolean
    */
-  execute(isDebug = false) {
+  execute(isDebug = false, message = String | undefined) {
     if (isDebug) {
-      if (this.prop instanceof Array && this.prop.length >= 1) {
-        delete this.prop;
-        return this;
-      } else if (this.prop instanceof Object) {
-        delete this.prop;
-        return this;
-      } else {
-        return this;
-      }
-    } else {
-      return this;
+      console.warn("\x1b[33m[x] Warning: %s\x1b[0m", message);
+      return process.exit(this);
     }
+    return process.exit(this);
   }
 
   get get() {}
@@ -163,34 +210,17 @@ class Memories {
    * @param {String|undefined} name string | undefined
    * @param {String|Object} value object | string | boolean | undefined
    */
-  set(name = String | undefined, value = Date | String | Boolean | undefined) {
-    const warning = {
-      noProp:
-        "\nWarning: Parameter diperlukan, kamu dapat mengaturnya dengan menggunakan metode memories.set(name, value)\n",
-      isFunction:
-        "\nWarning: Parameter dengan tipe [Function] tidak dapat diterima!\n",
+  set(
+    name = String | undefined,
+    value = Object | Date | String | Boolean | undefined
+  ) {
+    this.warning = {
+      noProp: (propName) =>
+        `Parameter [${propName}] diperlukan, kamu dapat mengaturnya dengan menggunakan metode memories.set('${propName}', value)\n`,
+      isFunction: (propName) =>
+        `Parameter [${propName}] dengan tipe [Function] tidak dapat diterima!\n`,
     };
-
-    switch (name) {
-      case "isDebug":
-        if (value === true) {
-          delete this.prop;
-          console.log(
-            this.hasOwnProperty("datetime") === false ? warning.noProp : this
-          );
-        } else {
-          delete this.prop;
-        }
-        break;
-
-      default:
-        if (typeof value === "function") {
-          console.warn(warning.isFunction);
-          return this;
-        } else {
-          return (this[name] = value);
-        }
-    }
+    return (this[name] = value);
   }
 }
 

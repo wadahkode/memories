@@ -13,7 +13,7 @@ const productList = [
     expired: "2/4/2021, 23:00:00",
   },
   {
-    id: 1,
+    id: 3,
     name: "kopi kapal api",
     expired: "2/5/2022, 05:30:00",
   },
@@ -35,6 +35,6 @@ productList.map((item) => {
   console.log(
     status
       ? `Produk ${item.name} telah kadaluarsa!`
-      : `Produk ${item.name} belum kadaluarsa!"`
+      : `Produk ${item.name} belum kadaluarsa!`
   );
 });

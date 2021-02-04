@@ -37,6 +37,30 @@ body {
   border-radius: 100%;
 }
 
+ul.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+ul.tab li {
+  padding: 4px;
+  border-bottom: 2px solid #f2f2f2;
+  cursor: pointer;
+}
+
+ul.tab li h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* .tab-content {} */
+/* .tab-content .tab-item {} */
+.tab-content .tab-item.d-none {
+  display: none;
+}
+
 .text-white {
   color: #fff;
 }
