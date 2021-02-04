@@ -5,8 +5,6 @@
   "main": "./src/memories.js",
   "files": [
     "build",
-    "examples",
-    "test",
     "README.md",
     "LICENSE",
     "package.json"
