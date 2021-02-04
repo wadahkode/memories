@@ -15,7 +15,7 @@ const productList = [
   {
     id: 1,
     name: "kopi kapal api",
-    expired: "2/5/2021, 05:30:00",
+    expired: "2/5/2022, 05:30:00",
   },
 ];
 
@@ -24,7 +24,13 @@ let status = false;
 
 productList.map((item) => {
   product.set("datetime", item.expired);
-  status = product.expired("in hour");
+  /**
+   * Secara logika waktu expired itu lebih tinggi dari waktu sekarang,
+   * Maka dari itu cukup beri parameter in second, in minute, in hour, dan seterusnya.
+   *
+   * @return boolean true | false
+   */
+  status = product.expired("in year");
 
   console.log(
     status
