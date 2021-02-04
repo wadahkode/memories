@@ -14,7 +14,7 @@ Mengubah waktu standar menjadi waktu moment.
 ```html
 ...
 <time datetime="12/7/2020, 16:11:00"></time>
-<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.2/build/memories.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.3/build/memories.min.js"></script>
 ...
 ```
 
