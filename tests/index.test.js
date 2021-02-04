@@ -31,4 +31,20 @@ const data = {
 };
 
 console.log("Nama: %s\nUmur: %s", data.name, data.umur);
+console.log(`Sudah ${moment.delta('month')} bulan berlalu sejak lahir`);
+
+console.log('\n------ Test Timeout 2 seconds ------');
+
+let sec2 = new memories({datetime: new Date()});
+setTimeout(()=> {
+  let result = sec2.delta('second');
+
+  if(result === 2){
+    console.log("✔️ memories.delta seems OK.");
+  }
+  else{
+    console.log("❌ Expected 2 but got "+result);
+  }
+}, 2000);
+
 module.exports = memories;

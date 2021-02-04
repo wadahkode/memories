@@ -87,6 +87,31 @@ class Memories {
   }
 
   /**
+   * Menghitung waktu yang sudah berlalu sejak sekarang
+   * @param  {String|undefined} type "day" | "minute" | "second"
+   * @return {Number}      Return ms jika parameter type tidak di isi
+   */
+  delta(type = String | undefined){
+    let delta = Date.now() - dateParser(this.datetime);
+    if(type === undefined) return delta;
+
+    delta /= 1000;
+    if(type === "second") return Math.floor(delta);
+    if(type === "minute")
+      return Math.floor(delta / 60);
+    if(type === "hour")
+      return Math.floor(delta / 3600);
+    if(type === "day")
+      return Math.floor(delta / (3600 * 24));
+    if(type === "month")
+      return Math.floor(delta / (3600 * 24 * 30));
+    if(type === "year")
+      return Math.floor(delta / (3600 * 24 * 30 * 12));
+
+    throw new Error('Parameter "type" hanya menerima undefined atau string seperti (second, minute, hour, day, month). Tetapi malah dapat:'+type);
+  }
+
+  /**
    * Untuk memberi pesan kesalahan jika properti kelas tidak diisi
    * dan sistem debug telah dinyalakan
    *
