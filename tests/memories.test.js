@@ -33,6 +33,8 @@ class Memories {
 
   /**
    * Menghitung waktu yang sudah berlalu sejak sekarang
+   *
+   * @author StefansArya
    * @param  {String|undefined} type "day" | "minute" | "second"
    * @return {Number}      Return ms jika parameter type tidak di isi
    */
@@ -58,20 +60,13 @@ class Memories {
    * Metode untuk menentukan tanggal expired berdasarkan
    * tanggal yang telah ditentukan.
    *
-   * @param {*} expired Number
    * @param {*} unknown String
    */
-  expired(expired = Number, unknown = String) {
-    let timeNow = this.timeAgo(),
-      status = false;
+  expired(unknown = String) {
+    let periode = dateParser(this.datetime),
+      unPeriode = dateParser(new Date());
 
-    if (timeNow.match(unknown)) {
-      let n = timeNow.match(/\d+/g);
-      if (n !== null) {
-        n.map((i) => (status = i >= expired));
-      }
-    }
-    return status;
+    return Math.floor((periode - unPeriode) / this.timeListAgo(unknown)) < 1;
   }
 
   /**
@@ -139,6 +134,35 @@ class Memories {
         : Infinity;
 
     return parsed;
+  }
+
+  timeListAgo(name = String) {
+    const SECOND = 1000,
+      MINUTE = 60 * SECOND,
+      HOUR = 60 * MINUTE,
+      DAY = HOUR * 24,
+      WEEK = DAY * 7,
+      MONTH = DAY * 30,
+      YEAR = DAY * 365;
+
+    const timelist = {
+      "in second": SECOND,
+      second: SECOND,
+      "in minute": MINUTE,
+      minute: MINUTE,
+      "in hour": HOUR,
+      hour: HOUR,
+      "in day": DAY,
+      day: DAY,
+      "in week": WEEK,
+      week: WEEK,
+      "in month": MONTH,
+      month: MONTH,
+      "in year": YEAR,
+      year: YEAR,
+    };
+
+    return timelist[name];
   }
 
   /**

@@ -6,7 +6,6 @@
  * @param {*} date string | object
  */
 const dateParser = (date = Date | String) => {
-  let datetime, timestamp;
   let parsed = undefined;
 
   if (typeof date === "string") {
