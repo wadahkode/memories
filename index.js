@@ -14,13 +14,13 @@ article.forEach((time) => {
     },
   };
 
-  const refresh = setInterval(() => {
+  setInterval(() => {
     if (prefix == "expired") {
       let statusExpired = getExpired(options);
       if (statusExpired) {
-        time.innerHTML = "expired: <b>sudah kadaluarsa</b>";
+        return (time.innerHTML = "expired: <b>sudah kadaluarsa</b>");
       } else {
-        time.innerHTML = "expired: <b>" + time.dateTime + "</b>";
+        return (time.innerHTML = "expired: <b>" + time.dateTime + "</b>");
       }
     } else {
       return getMemories(options, prefix).then((response) => {
