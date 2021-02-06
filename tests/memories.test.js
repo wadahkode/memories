@@ -32,6 +32,31 @@ class Memories {
   }
 
   /**
+   * Menghitung waktu mundur
+   *
+   * @since version 1.1.8
+   */
+  countdown() {
+    let end = dateParser(this.datetime, this),
+      start = dateParser(new Date(), this),
+      distance = end - start;
+
+    return {
+      day: Math.floor(distance / this.timeListAgo('day')),
+      hour: Math.floor(
+        (distance % this.timeListAgo('day')) / this.timeListAgo('hour')
+      ),
+      minute: Math.floor(
+        (distance % this.timeListAgo('hour')) / this.timeListAgo('minute')
+      ),
+      second: Math.floor(
+        (distance % this.timeListAgo('minute')) / this.timeListAgo('second')
+      ),
+      distance,
+    };
+  }
+
+  /**
    * Menghitung waktu yang sudah berlalu sejak sekarang
    *
    * @author StefansArya

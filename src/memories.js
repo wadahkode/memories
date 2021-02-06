@@ -32,6 +32,31 @@ class Memories {
   }
 
   /**
+   * Menghitung waktu mundur
+   *
+   * @since version 1.1.8
+   */
+  countdown() {
+    let end = dateParser(this.datetime, this),
+      start = dateParser(new Date(), this),
+      distance = end - start;
+
+    return {
+      day: Math.floor(distance / this.timeListAgo('day')),
+      hour: Math.floor(
+        (distance % this.timeListAgo('day')) / this.timeListAgo('hour')
+      ),
+      minute: Math.floor(
+        (distance % this.timeListAgo('hour')) / this.timeListAgo('minute')
+      ),
+      second: Math.floor(
+        (distance % this.timeListAgo('minute')) / this.timeListAgo('second')
+      ),
+      distance,
+    };
+  }
+
+  /**
    * Menghitung waktu yang sudah berlalu sejak sekarang
    *
    * @author StefansArya
@@ -54,6 +79,20 @@ class Memories {
       'Parameter "type" hanya menerima undefined atau string seperti (second, minute, hour, day, month). Tetapi malah dapat:' +
         type
     );
+  }
+
+  /**
+   * Untuk memberi pesan kesalahan jika properti datetime tidak dapat ditemukan
+   * dan sistem debug telah dinyalakan, atau keluarkan program.
+   *
+   * @param {*} isDebug boolean
+   */
+  execute(isDebug = false, message = String | undefined) {
+    if (isDebug) {
+      console.warn('\x1b[33m[x] Warning: %s\x1b[0m', message);
+      return process.exit(this);
+    }
+    return process.exit(this);
   }
 
   /**
@@ -147,6 +186,17 @@ class Memories {
     return parsed;
   }
 
+  /**
+   * Daftar waktu dari:
+   * - tahun
+   * - bulan
+   * - minggu
+   * - hari
+   * - jam
+   * - menit
+   * - detik
+   * @param {*} name string
+   */
   timeListAgo(name = String) {
     const SECOND = 1000,
       MINUTE = 60 * SECOND,
@@ -177,32 +227,10 @@ class Memories {
   }
 
   /**
-   * Untuk memberi pesan kesalahan jika properti datetime tidak dapat ditemukan
-   * dan sistem debug telah dinyalakan, atau keluarkan program.
+   * Membuat jadwal
    *
-   * @param {*} isDebug boolean
+   * @param {*} prefix string
    */
-  execute(isDebug = false, message = String | undefined) {
-    if (isDebug) {
-      console.warn('\x1b[33m[x] Warning: %s\x1b[0m', message);
-      return process.exit(this);
-    }
-    return process.exit(this);
-  }
-
-  get get() {}
-
-  /**
-   * Getter
-   *
-   * Fungsi untuk mendapatkan property
-   *
-   * @param {String} name string
-   */
-  get(name = String) {
-    return this[name];
-  }
-
   schedule(prefix = String) {
     let periode = dateParser(this.datetime, this),
       unPeriode = dateParser(new Date(), this),
@@ -221,6 +249,19 @@ class Memories {
     });
 
     return compare >= 1;
+  }
+
+  get get() {}
+
+  /**
+   * Getter
+   *
+   * Fungsi untuk mendapatkan property
+   *
+   * @param {String} name string
+   */
+  get(name = String) {
+    return this[name];
   }
 
   /**

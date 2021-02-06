@@ -1,4 +1,4 @@
-const memories = require("./memories.test");
+const memories = require('./memories.test');
 const moment = new memories();
 
 /**
@@ -8,7 +8,7 @@ const moment = new memories();
  *
  * @default false
  */
-moment.set("isDebug", false);
+moment.set('isDebug', false);
 
 /**
  * Pengaturan
@@ -20,11 +20,11 @@ moment.set("isDebug", false);
  * @param {*} name string
  * @param {*} value string | object | boolean
  */
-moment.set("datetime", "8/18/1991, 05:30:30");
+moment.set('datetime', '8/18/1991, 05:30:30');
 //! Belum digunakan
-moment.set("language", "id-ID");
-moment.set("locale", {
-  timeZone: "Asia/Jakarta",
+moment.set('language', 'id-ID');
+moment.set('locale', {
+  timeZone: 'Asia/Jakarta',
   hour12: false,
 });
 //! Jangan mengatur function dengan metode set, contoh kesalahan:
@@ -32,34 +32,25 @@ moment.set("locale", {
 //! Jika debug dinyalakan ini akan memberikan laporan error, kenapa program tidak dapat berjalan?
 
 const data = {
-  nama: "Ayus Irfang Filaras",
+  nama: 'Ayus Irfang Filaras',
   //? Tetapkan keluaran sebagai hari kelahiran atau waktu yang sudah berlalu.
   // umur: moment.timeAgo(),
-  umur: moment.timeAgo("birthday", {
-    y: "tahun",
-    m: "bulan",
-    d: "hari",
-    w: "minggu",
-    h: "jam",
-    i: "menit",
-    s: "detik",
-    n: "baru saja",
-  }),
+  umur: moment.timeAgo('birthday'),
 };
 
-console.log("Nama: %s\nUmur: %s", data.nama, data.umur);
-console.log(`Sudah ${moment.delta("month")} bulan berlalu sejak lahir`);
+console.log('Nama: %s\nUmur: %s', data.nama, data.umur);
+console.log(`Sudah ${moment.delta('month')} bulan berlalu sejak lahir`);
 
-console.log("\n------ Test Timeout 2 seconds ------");
+console.log('\n------ Test Timeout 2 seconds ------');
 
 let sec2 = new memories({ datetime: new Date() });
 setTimeout(() => {
-  let result = sec2.delta("second");
+  let result = sec2.delta('second');
 
   if (result === 2) {
-    console.log("✔️ %s", " memories.delta seems OK.");
+    console.log('✔️ %s', ' memories.delta seems OK.');
   } else {
-    console.log("❌ %s", " Expected 2 but got " + result);
+    console.log('❌ %s', ' Expected 2 but got ' + result);
   }
 }, 2000);
 

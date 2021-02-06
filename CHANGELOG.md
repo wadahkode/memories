@@ -16,3 +16,9 @@
   <li>Add fitur schedule</li>
   <li>Add support locale id and en</li>
 </ul>
+
+### versi 1.1.8
+
+<ul>
+  <li>Add fitur countdown</li>
+</ul>

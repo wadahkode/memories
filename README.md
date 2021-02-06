@@ -13,8 +13,11 @@ Mengubah waktu menjadi momen yang sudah berlalu, ibaratnya kapan waktu kenangan 
 
 ```html
 ...
-<time datetime="12/7/2020, 16:11:00" prefix="birthday|expired|schedule"></time>
-<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.7/build/memories.min.js"></script>
+<time
+  datetime="12/7/2020, 16:11:00"
+  prefix="birthday|expired|schedule|countdown"
+></time>
+<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.8/build/memories.min.js"></script>
 ...
 ```
 
@@ -24,7 +27,7 @@ Datetime attributes:
    Isi dengan tanggal
 
 2. prefix
-   Isi dengan birthday atau expired atau schedule
+   Isi dengan birthday atau expired atau schedule atau countdown
 
 ### Cara penggunaan pada lingkungan nodejs
 
@@ -65,16 +68,7 @@ const data = {
   nama: 'Ayus Irfang Filaras',
   //? Tetapkan keluaran sebagai hari kelahiran atau waktu yang sudah berlalu.
   // umur: moment.timeAgo(),
-  umur: moment.timeAgo('birthday', {
-    y: 'tahun',
-    m: 'bulan',
-    d: 'hari',
-    w: 'minggu',
-    h: 'jam',
-    i: 'menit',
-    s: 'detik',
-    n: 'baru saja',
-  }),
+  umur: moment.timeAgo('birthday'),
 };
 
 console.log('Nama: %s\nUmur: %s', data.nama, data.umur);

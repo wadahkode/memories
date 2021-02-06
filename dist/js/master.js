@@ -13,14 +13,27 @@ btnTab.forEach((btn, key) => {
           tabItem[key].nextElementSibling.nextElementSibling.classList.add(
             'd-none'
           );
+          tabItem[key].nextElementSibling.nextElementSibling.classList.add(
+            'd-none'
+          );
+          tabItem[
+            key
+          ].nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+            'd-none'
+          );
         }
+        break;
 
       case 2:
         if (tabItem[key].classList.contains('d-none')) {
           tabItem[key].classList.remove('d-none');
           tabItem[key].previousElementSibling.classList.add('d-none');
           tabItem[key].nextElementSibling.classList.add('d-none');
+          tabItem[key].nextElementSibling.nextElementSibling.classList.add(
+            'd-none'
+          );
         }
+        break;
 
       case 3:
         if (tabItem[key].classList.contains('d-none')) {
@@ -31,7 +44,26 @@ btnTab.forEach((btn, key) => {
           ].previousElementSibling.previousElementSibling.classList.add(
             'd-none'
           );
+          tabItem[key].nextElementSibling.classList.add('d-none');
         }
+        break;
+
+      case 4:
+        if (tabItem[key].classList.contains('d-none')) {
+          tabItem[key].classList.remove('d-none');
+          tabItem[key].previousElementSibling.classList.add('d-none');
+          tabItem[
+            key
+          ].previousElementSibling.previousElementSibling.classList.add(
+            'd-none'
+          );
+          tabItem[
+            key
+          ].previousElementSibling.previousElementSibling.previousElementSibling.classList.add(
+            'd-none'
+          );
+        }
+        break;
     }
   };
 });

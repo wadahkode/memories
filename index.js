@@ -28,6 +28,15 @@ article.forEach((time) => {
       } else {
         return (time.innerHTML = time.dateTime + '<b> (belum dimulai)</b>');
       }
+    } else if (prefix == 'countdown') {
+      let status = getCountdown(options);
+
+      if (status.distance < 0) {
+        clearInterval(refresh);
+        return (time.innerHTML = `Hot promo: tidak ada`);
+      } else {
+        return (time.innerHTML = `Hot promo: <b>${status.day}, ${status.hour} : ${status.minute} : ${status.second}</b>`);
+      }
     } else {
       return getMemories(options, prefix).then((response) => {
         if (response) {
@@ -69,7 +78,7 @@ function getExpired(options = {}) {
   moment.set('language', options.language);
   moment.set('locale', options.locale);
 
-  return moment.expired('in day');
+  return moment.expired('year|month|day|hour|minute|second');
 }
 
 // Schedule
@@ -80,5 +89,16 @@ function getSchedule(options = {}) {
   moment.set('language', options.language);
   moment.set('locale', options.locale);
 
-  return moment.schedule('day|hour|miute|second');
+  return moment.schedule('year|month|day|hour|minute|second');
+}
+
+// Countdown
+function getCountdown(options) {
+  const moment = new memories(options);
+  moment.set('isDebug', false);
+  moment.set('datetime', options.datetime);
+  moment.set('language', options.language);
+  moment.set('locale', options.locale);
+
+  return moment.countdown();
 }
