@@ -1,4 +1,4 @@
-const dateParser = require("./dateParser");
+const dateParser = require('./dateParser');
 
 /**
  * Memories
@@ -43,12 +43,12 @@ class Memories {
     if (type === undefined) return delta;
 
     delta /= 1000;
-    if (type === "second") return Math.floor(delta);
-    if (type === "minute") return Math.floor(delta / 60);
-    if (type === "hour") return Math.floor(delta / 3600);
-    if (type === "day") return Math.floor(delta / (3600 * 24));
-    if (type === "month") return Math.floor(delta / (3600 * 24 * 30));
-    if (type === "year") return Math.floor(delta / (3600 * 24 * 30 * 12));
+    if (type === 'second') return Math.floor(delta);
+    if (type === 'minute') return Math.floor(delta / 60);
+    if (type === 'hour') return Math.floor(delta / 3600);
+    if (type === 'day') return Math.floor(delta / (3600 * 24));
+    if (type === 'month') return Math.floor(delta / (3600 * 24 * 30));
+    if (type === 'year') return Math.floor(delta / (3600 * 24 * 30 * 12));
 
     throw new Error(
       'Parameter "type" hanya menerima undefined atau string seperti (second, minute, hour, day, month). Tetapi malah dapat:' +
@@ -65,9 +65,26 @@ class Memories {
    */
   expired(unknown = String) {
     let periode = dateParser(this.datetime, this),
-      unPeriode = dateParser(new Date(), this);
+      unPeriode = dateParser(new Date(), this),
+      timelist = false;
 
-    return Math.floor((periode - unPeriode) / this.timeListAgo(unknown)) < 1;
+    unknown = unknown.match(/\|/g) ? unknown.split(/\|/g) : unknown;
+
+    if (typeof unknown !== 'object') {
+      return (
+        Math.floor(unPeriode / this.timeListAgo(unknown)) >
+        Math.floor(periode / this.timeListAgo(unknown))
+      );
+    } else {
+      unknown.map(
+        (name) =>
+          (timelist =
+            Math.floor(unPeriode / this.timeListAgo(name)) >
+            Math.floor(periode / this.timeListAgo(name)))
+      );
+
+      return timelist;
+    }
   }
 
   /**
@@ -77,14 +94,14 @@ class Memories {
    * @param {*} prefix string
    * @param {*} suffix object
    */
-  timeAgo(prefix = "", suffix = {}) {
+  timeAgo(prefix = '', suffix = {}) {
     // check property datetime
-    if (this.hasOwnProperty("datetime") == false) {
-      this.execute(this.isDebug, this.warning.noProp("datetime"));
+    if (this.hasOwnProperty('datetime') == false) {
+      this.execute(this.isDebug, this.warning.noProp('datetime'));
     }
 
     for (let name in this) {
-      if (typeof this[name] == "function") {
+      if (typeof this[name] == 'function') {
         this.execute(this.isDebug, this.warning.isFunction(name));
       }
     }
@@ -95,34 +112,34 @@ class Memories {
       this.message[prefix](point, suffix[name])[name];
     const timeNow = periode > unPeriode && periode - unPeriode;
     const parsed =
-      timeNow <= Math.floor(this.timeListAgo("second") * 1.5)
-        ? moment(Math.floor(timeNow / this.timeListAgo("second")), "n")
-        : timeNow > this.timeListAgo("second") &&
-          timeNow < this.timeListAgo("minute")
-        ? moment(Math.floor(timeNow / this.timeListAgo("second")), "s")
-        : timeNow > this.timeListAgo("second") &&
-          timeNow > this.timeListAgo("minute") &&
-          timeNow < this.timeListAgo("hour")
-        ? moment(Math.floor(timeNow / this.timeListAgo("minute")), "i")
-        : timeNow > this.timeListAgo("minute") &&
-          timeNow > this.timeListAgo("hour") &&
-          timeNow < this.timeListAgo("day")
-        ? moment(Math.floor(timeNow / this.timeListAgo("hour")), "h")
-        : timeNow > this.timeListAgo("hour") &&
-          timeNow > this.timeListAgo("day") &&
-          timeNow < this.timeListAgo("week")
-        ? moment(Math.floor(timeNow / this.timeListAgo("day")), "d")
-        : timeNow > this.timeListAgo("day") &&
-          timeNow > this.timeListAgo("week") &&
-          timeNow < this.timeListAgo("month")
-        ? moment(Math.floor(timeNow / this.timeListAgo("week")), "w")
-        : timeNow > this.timeListAgo("week") &&
-          timeNow > this.timeListAgo("month") &&
-          timeNow < this.timeListAgo("year")
-        ? moment(Math.floor(timeNow / this.timeListAgo("month")), "m")
-        : timeNow > this.timeListAgo("month") &&
-          timeNow > this.timeListAgo("year")
-        ? moment(Math.floor(timeNow / this.timeListAgo("year")), "y")
+      timeNow <= Math.floor(this.timeListAgo('second') * 1.5)
+        ? moment(Math.floor(timeNow / this.timeListAgo('second')), 'n')
+        : timeNow > this.timeListAgo('second') &&
+          timeNow < this.timeListAgo('minute')
+        ? moment(Math.floor(timeNow / this.timeListAgo('second')), 's')
+        : timeNow > this.timeListAgo('second') &&
+          timeNow > this.timeListAgo('minute') &&
+          timeNow < this.timeListAgo('hour')
+        ? moment(Math.floor(timeNow / this.timeListAgo('minute')), 'i')
+        : timeNow > this.timeListAgo('minute') &&
+          timeNow > this.timeListAgo('hour') &&
+          timeNow < this.timeListAgo('day')
+        ? moment(Math.floor(timeNow / this.timeListAgo('hour')), 'h')
+        : timeNow > this.timeListAgo('hour') &&
+          timeNow > this.timeListAgo('day') &&
+          timeNow < this.timeListAgo('week')
+        ? moment(Math.floor(timeNow / this.timeListAgo('day')), 'd')
+        : timeNow > this.timeListAgo('day') &&
+          timeNow > this.timeListAgo('week') &&
+          timeNow < this.timeListAgo('month')
+        ? moment(Math.floor(timeNow / this.timeListAgo('week')), 'w')
+        : timeNow > this.timeListAgo('week') &&
+          timeNow > this.timeListAgo('month') &&
+          timeNow < this.timeListAgo('year')
+        ? moment(Math.floor(timeNow / this.timeListAgo('month')), 'm')
+        : timeNow > this.timeListAgo('month') &&
+          timeNow > this.timeListAgo('year')
+        ? moment(Math.floor(timeNow / this.timeListAgo('year')), 'y')
         : Infinity;
 
     return parsed;
@@ -138,19 +155,19 @@ class Memories {
       YEAR = DAY * 365;
 
     const timelist = {
-      "in second": SECOND,
+      'in second': SECOND,
       second: SECOND,
-      "in minute": MINUTE,
+      'in minute': MINUTE,
       minute: MINUTE,
-      "in hour": HOUR,
+      'in hour': HOUR,
       hour: HOUR,
-      "in day": DAY,
+      'in day': DAY,
       day: DAY,
-      "in week": WEEK,
+      'in week': WEEK,
       week: WEEK,
-      "in month": MONTH,
+      'in month': MONTH,
       month: MONTH,
-      "in year": YEAR,
+      'in year': YEAR,
       year: YEAR,
     };
 
@@ -165,7 +182,7 @@ class Memories {
    */
   execute(isDebug = false, message = String | undefined) {
     if (isDebug) {
-      console.warn("\x1b[33m[x] Warning: %s\x1b[0m", message);
+      console.warn('\x1b[33m[x] Warning: %s\x1b[0m', message);
       return process.exit(this);
     }
     return process.exit(this);
@@ -182,6 +199,26 @@ class Memories {
    */
   get(name = String) {
     return this[name];
+  }
+
+  schedule(prefix) {
+    let periode = dateParser(this.datetime, this),
+      unPeriode = dateParser(new Date(), this),
+      compare = false;
+
+    prefix = prefix.match(/\|/g) ? prefix.split(/\|/g) : prefix;
+    prefix.map((name) => {
+      compare =
+        periode > unPeriode || periode === unPeriode
+          ? unPeriode > periode - this.timeListAgo(name)
+            ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
+            : false
+          : unPeriode > periode - this.timeListAgo(name)
+          ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
+          : false;
+    });
+
+    return compare >= 1;
   }
 
   /**
@@ -210,6 +247,8 @@ class Memories {
         `Parameter [${propName}] diperlukan, kamu dapat mengaturnya dengan menggunakan metode memories.set('${propName}', value)\n`,
       isFunction: (propName) =>
         `Parameter [${propName}] dengan tipe [Function] tidak dapat diterima!\n`,
+      propType: (propName) =>
+        `Parameter [${propName}] dengan tipe [${typeof propName}] tidak dapat diterima!\n`,
     };
     return (this[name] = value);
   }
