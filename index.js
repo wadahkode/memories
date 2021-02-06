@@ -16,9 +16,9 @@ article.forEach((time) => {
     if (prefix == 'expired') {
       let statusExpired = getExpired(options);
       if (statusExpired) {
-        return (time.innerHTML = 'expired: <b>sudah kadaluarsa</b>');
+        return (time.innerHTML = `expired: ${time.dateTime} <b>(sudah kadaluarsa)</b>`);
       } else {
-        return (time.innerHTML = 'expired: <b>' + time.dateTime + '</b>');
+        return (time.innerHTML = `expired: ${time.dateTime} <b>(belum kadaluarsa)</b>`);
       }
     } else if (prefix == 'schedule') {
       let status = getSchedule(options);
