@@ -13,17 +13,23 @@ Mengubah waktu menjadi momen yang sudah berlalu, ibaratnya kapan waktu kenangan 
 
 ```html
 ...
-<time datetime="12/7/2020, 16:11:00" prefix="birthday|expired"></time>
-<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.6/build/memories.min.js"></script>
+<time datetime="12/7/2020, 16:11:00" prefix="birthday|expired|schedule"></time>
+<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.7/build/memories.min.js"></script>
 ...
 ```
 
-Atur isi prefix dengan birthday atau expired.
+Datetime attributes:
+
+1. datetime
+   Isi dengan tanggal
+
+2. prefix
+   Isi dengan birthday atau expired atau schedule
 
 ### Cara penggunaan pada lingkungan nodejs
 
 ```javascript
-const memories = require("@wadahkode/memories");
+const memories = require('@wadahkode/memories');
 const moment = new memories();
 /**
  * Sistem Debugging
@@ -32,7 +38,7 @@ const moment = new memories();
  *
  * @default false
  */
-moment.set("isDebug", false);
+moment.set('isDebug', false);
 
 /**
  * Pengaturan
@@ -44,41 +50,46 @@ moment.set("isDebug", false);
  * @param {*} name string
  * @param {*} value string | object | boolean
  */
-moment.set("datetime", "8/18/1991, 05:30:30");
+moment.set('datetime', '8/18/1991, 05:30:30');
+moment.set('language', 'id-ID');
+moment.set('locale', {
+  timeZone: 'Asia/Jakarta',
+  hour12: false,
+});
 
 //! Jangan mengatur function dengan metode set, contoh kesalahan:
 // moment.set("test", function () {});
 //! Jika debug dinyalakan ini akan memberikan laporan error, kenapa program tidak dapat berjalan?
 
 const data = {
-  nama: "Ayus Irfang Filaras",
+  nama: 'Ayus Irfang Filaras',
   //? Tetapkan keluaran sebagai hari kelahiran atau waktu yang sudah berlalu.
   // umur: moment.timeAgo(),
-  umur: moment.timeAgo("birthday", {
-    y: "tahun",
-    m: "bulan",
-    d: "hari",
-    w: "minggu",
-    h: "jam",
-    i: "menit",
-    s: "detik",
-    n: "baru saja",
+  umur: moment.timeAgo('birthday', {
+    y: 'tahun',
+    m: 'bulan',
+    d: 'hari',
+    w: 'minggu',
+    h: 'jam',
+    i: 'menit',
+    s: 'detik',
+    n: 'baru saja',
   }),
 };
 
-console.log("Nama: %s\nUmur: %s", data.nama, data.umur);
-console.log(`Sudah ${moment.delta("month")} bulan berlalu sejak lahir`);
+console.log('Nama: %s\nUmur: %s', data.nama, data.umur);
+console.log(`Sudah ${moment.delta('month')} bulan berlalu sejak lahir`);
 
-console.log("\n------ Test Timeout 2 seconds ------");
+console.log('\n------ Test Timeout 2 seconds ------');
 
 let sec2 = new memories({ datetime: new Date() });
 setTimeout(() => {
-  let result = sec2.delta("second");
+  let result = sec2.delta('second');
 
   if (result === 2) {
-    console.log("✔️ %s", " memories.delta seems OK.");
+    console.log('✔️ %s', ' memories.delta seems OK.');
   } else {
-    console.log("❌ %s", " Expected 2 but got " + result);
+    console.log('❌ %s', ' Expected 2 but got ' + result);
   }
 }, 2000);
 ```
