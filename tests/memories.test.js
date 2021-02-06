@@ -109,7 +109,9 @@ class Memories {
     const periode = dateParser(new Date(), this);
     const unPeriode = dateParser(this.datetime, this);
     const moment = (point, name) =>
-      this.message[prefix](point, suffix[name])[name];
+      this.message[prefix == '' ? 'timeAgo' : prefix](point, suffix[name])[
+        name
+      ];
     const timeNow = periode > unPeriode && periode - unPeriode;
     const parsed =
       timeNow <= Math.floor(this.timeListAgo('second') * 1.5)
@@ -201,7 +203,7 @@ class Memories {
     return this[name];
   }
 
-  schedule(prefix) {
+  schedule(prefix = String) {
     let periode = dateParser(this.datetime, this),
       unPeriode = dateParser(new Date(), this),
       compare = false;
