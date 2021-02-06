@@ -38,23 +38,31 @@ body {
 }
 
 ul.tab {
-  /* display: flex;
+  /*display: flex;
   align-items: center;
-  justify-content: space-between; */
+  justify-content: space-between;*/
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1em;
 }
 
 ul.tab li {
-  border-bottom: 2px solid #f2f2f2;
+  flex: 1 1 auto;
+  margin: 0.5em 0;
+  /*border-bottom: 2px solid #f2f2f2;*/
   cursor: pointer;
 }
 
 ul.tab li h1 {
   margin: 0;
   padding: 0;
-  font-size: 18pt;
+  font-size: 14pt;
 }
 
 /* .tab-content {} */
