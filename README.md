@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/wadahkode/memories.svg?branch=dev)](https://travis-ci.com/wadahkode/memories)
+
 <a href="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.1/">
     <img src="https://img.shields.io/jsdelivr/npm/hm/@wadahkode/memories?style=flat-square" alt="jsDelivr Downloads"/>
 </a>
