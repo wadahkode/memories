@@ -1,0 +1,14 @@
+language: node_js
+node_js: 14.15.4
+
+before_install:
+  - npm install -g webpack
+  - npm install
+
+install:
+  - npm install webpack-cli --save-dev
+
+script:
+  - npm run build
+
+cache: npm
