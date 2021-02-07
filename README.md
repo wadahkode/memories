@@ -5,6 +5,8 @@
     <img src="https://img.shields.io/npm/dw/@wadahkode/memories?style=flat-square" alt="NPM Downloads"/>
 </a>
 
+[![codecov](https://codecov.io/gh/wadahkode/memories/branch/dev/graph/badge.svg?token=GAIR6R1HB9)](https://codecov.io/gh/wadahkode/memories)
+
 ### Memories
 
 Mengubah waktu menjadi momen yang sudah berlalu, ibaratnya kapan waktu kenangan itu berlalu,
