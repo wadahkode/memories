@@ -32,17 +32,18 @@ Datetime attributes:
 1.  datetime
     Isi dengan tanggal, saya merekomendasikan gunakan format seperti ini:
 
-        ```html
-        datetime="12/7/2020, 16:11:00"
-        ```
+    ```html
+    datetime="12/7/2020, 16:11:00"
+    ```
 
-        Penjelasan:
-        * Angka 12 adalah bulan
-        * Angka 7 adalah hari
-        * Angka 2020 adalah tahun
-        * Angka 16 adalah jam
-        * Angka 11 adalah menit
-        * Angka 00 adalah detik
+    Penjelasan:
+
+    - Angka 12 adalah bulan
+    - Angka 7 adalah hari
+    - Angka 2020 adalah tahun
+    - Angka 16 adalah jam
+    - Angka 11 adalah menit
+    - Angka 00 adalah detik
 
     <br/>
 
