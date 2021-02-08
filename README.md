@@ -1,3 +1,7 @@
+### catatan
+
+Saya menulis panduan ini dengan bahasa indonesia, jika anda membutuhkan repository ini untuk bagian kecil proyek anda atau sebagai bahan belajar anda, saya merekomendasikan gunakan browser chrome, dan translate panduan ini sesuai dengan bahasa yang anda gunakan.
+
 [![Build Status](https://travis-ci.com/wadahkode/memories.svg?branch=dev)](https://travis-ci.com/wadahkode/memories)
 
 <a href="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.1/">
@@ -25,11 +29,29 @@ Mengubah waktu menjadi momen yang sudah berlalu, ibaratnya kapan waktu kenangan 
 
 Datetime attributes:
 
-1. datetime
-   Isi dengan tanggal
+1.  datetime
+    Isi dengan tanggal, saya merekomendasikan gunakan format seperti ini:
 
-2. prefix
-   Isi dengan birthday atau expired atau schedule atau countdown
+        ```html
+        datetime="12/7/2020, 16:11:00"
+        ```
+
+        Penjelasan:
+        * Angka 12 adalah bulan
+        * Angka 7 adalah hari
+        * Angka 2020 adalah tahun
+        * Angka 16 adalah jam
+        * Angka 11 adalah menit
+        * Angka 00 adalah detik
+
+    <br/>
+
+2.  prefix
+    Isi dengan birthday atau expired atau schedule atau countdown, contoh:
+
+    ```html
+    prefix="birthday"
+    ```
 
 ### Cara penggunaan pada lingkungan nodejs
 
@@ -111,8 +133,4 @@ Untuk melakukan perubahan secara manual baca petunjuk dibawah ini:
 
     $ npm run build
 
-### catatan
-
-Mungkin masih banyak bug/kesalahan, jadi silahkan tinggalkan issue atau lakukan pull request,
-jangan sungkan untuk saling berbagi, karena dengan berbagi akan
-menambah wawasan dan pengetahuan kita.
+Akhir kata semoga bermanfaat untuk proyek anda.
