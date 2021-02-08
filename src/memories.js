@@ -237,17 +237,28 @@ class Memories {
       compare = false;
 
     prefix = prefix.match(/\|/g) ? prefix.split(/\|/g) : prefix;
-    prefix.map((name) => {
+
+    if (typeof prefix !== 'object') {
       compare =
         periode > unPeriode || periode === unPeriode
-          ? unPeriode > periode - this.timeListAgo(name)
-            ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
+          ? unPeriode > periode - this.timeListAgo(prefix)
+            ? Math.floor(unPeriode / (periode - this.timeListAgo(prefix)))
             : false
-          : unPeriode > periode - this.timeListAgo(name)
-          ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
+          : unPeriode > periode - this.timeListAgo(prefix)
+          ? Math.floor(unPeriode / (periode - this.timeListAgo(prefix)))
           : false;
-    });
-
+    } else {
+      prefix.map((name) => {
+        compare =
+          periode > unPeriode || periode === unPeriode
+            ? unPeriode > periode - this.timeListAgo(name)
+              ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
+              : false
+            : unPeriode > periode - this.timeListAgo(name)
+            ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
+            : false;
+      });
+    }
     return compare >= 1;
   }
 
