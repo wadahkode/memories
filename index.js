@@ -1,54 +1,18 @@
 const memories = require('./src/memories');
-const article = document.querySelectorAll('time');
 
-article.forEach((time) => {
-  const prefix = time.getAttribute('prefix');
-  const options = {
-    datetime: time.getAttribute('datetime').toString().replace(',', ''),
-    language: 'id-ID',
-    locale: {
-      timeZone: 'Asia/Jakarta',
-      hour12: false,
-    },
-  };
+async function main() {
+  const container = document.querySelector('body');
+  const timelist = await getTimelist(container);
 
-  let refresh = setInterval(() => {
-    if (prefix == 'expired') {
-      let statusExpired = getExpired(options);
-      if (statusExpired) {
-        return (time.innerHTML = `expired: ${time.dateTime} <b>(sudah kadaluarsa)</b>`);
-      } else {
-        return (time.innerHTML = `expired: ${time.dateTime} <b>(belum kadaluarsa)</b>`);
-      }
-    } else if (prefix == 'schedule') {
-      let status = getSchedule(options);
-      if (status == undefined) clearInterval(refresh);
-      if (status) {
-        return (time.innerHTML = time.dateTime + '<b> (sudah dimulai)</b>');
-      } else {
-        return (time.innerHTML = time.dateTime + '<b> (belum dimulai)</b>');
-      }
-    } else if (prefix == 'countdown') {
-      let status = getCountdown(options);
+  return timelist;
+}
 
-      if (status.distance < 0) {
-        clearInterval(refresh);
-        return (time.innerHTML = `Hot promo: tidak ada`);
-      } else {
-        return (time.innerHTML = `Hot promo: <b>${status.day}, ${status.hour} : ${status.minute} : ${status.second}</b>`);
-      }
-    } else {
-      return getMemories(options, prefix).then((response) => {
-        if (response) {
-          time.innerHTML = response;
-        }
-      });
-    }
-  }, 10);
-});
+function getTimelist(c) {
+  return c.querySelectorAll('time');
+}
 
 // Mengatur waktu standar menjadi waktu moment
-async function getMemories(options = {}, prefix) {
+function getMemories(options = {}, prefix) {
   const moment = new memories();
   moment.set('isDebug', false);
   moment.set('datetime', options.datetime);
@@ -56,18 +20,9 @@ async function getMemories(options = {}, prefix) {
   moment.set('locale', options.locale);
 
   if (prefix != null) {
-    return await moment.timeAgo(prefix, {
-      y: 'tahun',
-      m: 'bulan',
-      d: 'hari',
-      w: 'minggu',
-      h: 'jam',
-      i: 'menit',
-      s: 'detik',
-      n: 'baru saja',
-    });
+    return moment.timeAgo(prefix);
   }
-  return await moment.timeAgo();
+  return moment.timeAgo();
 }
 
 // Expired
@@ -102,3 +57,49 @@ function getCountdown(options) {
 
   return moment.countdown();
 }
+
+setInterval(() => {
+  main().then((timelist) => {
+    if (typeof timelist == 'object') {
+      timelist.forEach((time) => {
+        const prefix = time.getAttribute('prefix');
+        const options = {
+          datetime: time.getAttribute('datetime').toString().replace(',', ''),
+          language: 'id-ID',
+          locale: {
+            timeZone: 'Asia/Jakarta',
+            hour12: false,
+          },
+        };
+
+        if (prefix == 'expired') {
+          let statusExpired = getExpired(options);
+          if (statusExpired) {
+            return (time.innerHTML = `expired: ${time.dateTime} <b>(sudah kadaluarsa)</b>`);
+          } else {
+            return (time.innerHTML = `expired: ${time.dateTime} <b>(belum kadaluarsa)</b>`);
+          }
+        } else if (prefix == 'schedule') {
+          let status = getSchedule(options);
+          if (status == undefined) clearInterval(refresh);
+          if (status) {
+            return (time.innerHTML = time.dateTime + '<b> (sudah dimulai)</b>');
+          } else {
+            return (time.innerHTML = time.dateTime + '<b> (belum dimulai)</b>');
+          }
+        } else if (prefix == 'countdown') {
+          let status = getCountdown(options);
+
+          if (status.distance < 0) {
+            clearInterval(refresh);
+            return (time.innerHTML = `Hot promo: tidak ada`);
+          } else {
+            return (time.innerHTML = `Hot promo: <b>${status.day}, ${status.hour} : ${status.minute} : ${status.second}</b>`);
+          }
+        } else {
+          time.innerHTML = getMemories(options, prefix);
+        }
+      });
+    }
+  });
+}, 20);

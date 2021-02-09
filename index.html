@@ -6,10 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mengubah waktu menjadi waktu moment</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
@@ -18,104 +16,111 @@
       media="all"
     />
   </head>
-  <body>
-    <div class="container">
+  <body class="bg-gray-800">
+    <div class="md:mx-80">
       <div class="profile">
         <img
           src="https://scontent.fsrg3-1.fna.fbcdn.net/v/t1.0-9/38562_102830739774500_4117273_n.jpg?_nc_cat=101&ccb=2&_nc_sid=ba80b0&_nc_eui2=AeE3BEiy5Y_h4Gb_RhCZGTGIlc3OiHmHlB-Vzc6IeYeUH-EvlUOl7XjqRNi78C9xO5xX6lsD61pXSEWfqzjZql7R&_nc_ohc=4MFgetVu0BoAX__RYrO&_nc_ht=scontent.fsrg3-1.fna&oh=d28e06635ece4b0469152c9e6b65a4c3&oe=6042ED26"
         />
-        <ul>
+        <ul class="m-0 p-0">
           <li>Nama: Ayus Irfang Filaras</li>
           <li>Tgl lahir: 18-08-1991</li>
           <li>Umur: <time datetime="8/18/1991" prefix="birthday"></time></li>
         </ul>
       </div>
-
       <div class="">
-        <div class="tab-width">
-          <ul class="tab d-flex mt-3" data-target=".tab-content">
-            <li>
-              <h1 class="btn btn-sm btn-primary p-2 text-white">Artikel</h1>
+        <div
+          class="tab-width w-full overflow-x-scroll md:overflow-hidden border-t-2 mt-10 md:mt-20 py-2"
+        >
+          <ul
+            class="tab flex items-center gap-2"
+            data-target=".tab-content"
+            style="width: 600px"
+          >
+            <li class="bg-blue-700 px-2 py-1 rounded">
+              <h1 class="text-white">Artikel</h1>
             </li>
-            <li>
+            <li class="bg-red-600 px-2 py-1 rounded">
               <h1 class="btn btn-sm btn-warning p-2 text-white">
                 Produk kadaluarsa
               </h1>
             </li>
-            <li>
-              <h1 class="btn btn-sm btn-danger p-2 text-white">Jadwal</h1>
+            <li class="bg-yellow-500 px-2 py-1 rounded">
+              <h1 class="text-white">Jadwal</h1>
             </li>
-            <li>
+            <li class="bg-red-400 px-2 py-1 rounded">
               <h1 class="btn btn-sm btn-success p-2 text-white">Countdown</h1>
+            </li>
+            <li class="bg-green-700 px-2 py-1 rounded">
+              <h1 class="btn btn-sm btn-success p-2 text-white">...</h1>
             </li>
           </ul>
         </div>
         <div class="tab-content">
           <div id="1" class="tab-item">
-            <article class="card my-3">
-              <div class="card-header">
-                <h1>artikel 1</h1>
-                <sub><time datetime="2/4/2021, 10:13:00"></time></sub>
+            <form action="" class="article px-3 py-4 bg-gray-700 rounded">
+              <h1 class="text-white mb-2">Buat artikel baru</h1>
+              <p class="text-white mb-2">
+                <b>Catatan: </b>Tidak ada data privasi yang diperlukan, secara
+                otomatis menggunakan penyimpanan dari browser anda.
+              </p>
+              <input
+                type="number"
+                name="id"
+                id="id"
+                class="hidden"
+                value="100"
+              />
+              <div>
+                <input
+                  type="text"
+                  name="judul"
+                  id="judul"
+                  class="w-full p-2 rounded focus:outline-none"
+                  placeholder="judul"
+                />
               </div>
-              <div class="card-body">
-                Perjalanan ini terasa sangat menyedihkan kala engkau tak duduk
-                disampingku kawan
+              <div class="mt-2">
+                <input
+                  type="date"
+                  name="date"
+                  id="date"
+                  class="w-full p-2 rounded focus:outline-none"
+                />
               </div>
-            </article>
-            <article class="card my-3">
-              <div class="card-header">
-                <h1>artikel 2</h1>
-                <sub>
-                  <time datetime="2/4/2021, 01:07:00"></time>
-                </sub>
+              <div class="mt-2">
+                <input
+                  type="time"
+                  name="time"
+                  id="time"
+                  class="w-full p-2 rounded focus:outline-none"
+                />
               </div>
-              <div class="card-body">
-                Mengapa kau tak membalas cintaku, mengapa engkau abaikan rasaku
+              <div class="mt-2">
+                <textarea
+                  name="isi"
+                  id="isi"
+                  cols="30"
+                  rows="2"
+                  class="w-full p-2 rounded focus:outline-none resize-none"
+                  placeholder="isi"
+                ></textarea>
               </div>
-            </article>
-            <article class="card my-3">
-              <div class="card-header">
-                <h1>artikel 3</h1>
-                <sub>
-                  <time datetime="2/3/2021, 10:02:00"></time>
-                </sub>
+              <div class="mt-2">
+                <button
+                  type="submit"
+                  class="bg-blue-700 px-2 py-1 rounded focus:outline-none text-white"
+                >
+                  Kirim
+                </button>
               </div>
-              <div class="card-body">
-                Ketika malam telah tiba, aku menunggu, aku menantimu
-              </div>
-            </article>
-            <article class="card my-3">
-              <div class="card-header">
-                <h1>artikel 4</h1>
-                <sub>
-                  <time datetime="1/10/2021, 10:02:00"></time>
-                </sub>
-              </div>
-              <div class="card-body">Tiba - tiba cinta datang kepadaku</div>
-            </article>
-            <article class="card my-3">
-              <div class="card-header">
-                <h1>artikel 5</h1>
-                <sub>
-                  <time datetime="1/1/2021, 10:02:00"></time>
-                </sub>
-              </div>
-              <div class="card-body">Sungguhku terpaku dalam lamunan</div>
-            </article>
-            <article class="card my-3">
-              <div class="card-header">
-                <h1>artikel 6</h1>
-                <sub>
-                  <time datetime="2/3/2020, 10:02:00"></time>
-                </sub>
-              </div>
-              <div class="card-body">
-                Ingin kucongkel keluar indah bola matamu
-              </div>
-            </article>
+            </form>
+            <div class="article-content"></div>
           </div>
           <div id="2" class="tab-item d-none">
-            <div class="card my-3">
+            <div
+              class="bg-gray-50 border border-transparent shadow-md rounded-md p-2 w-full my-3"
+            >
               <div class="card-header">
                 <h1>oreo</h1>
                 <sub>
@@ -123,7 +128,9 @@
                 </sub>
               </div>
             </div>
-            <div class="card my-3">
+            <div
+              class="bg-gray-50 border border-transparent shadow-md rounded-md p-2 w-full my-3"
+            >
               <div class="card-header">
                 <h1>silverqueen</h1>
                 <sub>
@@ -131,7 +138,9 @@
                 </sub>
               </div>
             </div>
-            <div class="card my-3">
+            <div
+              class="bg-gray-50 border border-transparent shadow-md rounded-md p-2 w-full my-3"
+            >
               <div class="card-header">
                 <h1>kopi kapal api</h1>
                 <sub>
@@ -141,7 +150,9 @@
             </div>
           </div>
           <div id="3" class="tab-item d-none">
-            <div class="card my-3">
+            <div
+              class="bg-gray-50 border border-transparent shadow-md rounded-md p-2 w-full my-3"
+            >
               <div class="card-header">
                 <h1>Ujian Matematika</h1>
                 <sub>
@@ -152,7 +163,9 @@
                 </sub>
               </div>
             </div>
-            <div class="card my-3">
+            <div
+              class="bg-gray-50 border border-transparent shadow-md rounded-md p-2 w-full my-3"
+            >
               <div class="card-header">
                 <h1>Ujian Bahasa Inggris</h1>
                 <sub>
@@ -165,7 +178,9 @@
             </div>
           </div>
           <div class="tab-item d-none" id="4">
-            <div class="card my-3">
+            <div
+              class="bg-gray-50 border border-transparent shadow-md rounded-md p-2 w-full my-3"
+            >
               <div class="card-body">
                 <time datetime="3/10/2021, 00:00:00" prefix="countdown"></time>
               </div>
@@ -173,13 +188,13 @@
           </div>
         </div>
       </div>
-      <footer class="text-center">
+      <footer class="flex items-center gap-2 justify-center mt-10">
         &copy; @wadahkode/memories 2020
         <a
           href="https://github.com/wadahkode/memories"
-          class="btn btn-sm btn-primary"
+          class="bg-blue-700 flex items-center px-2 py-1 rounded text-white gap-2"
         >
-          github
+          <span>github</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

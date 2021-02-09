@@ -14,12 +14,14 @@ body {
   align-items: center;
   background: #f2f2f2;
   border-radius: 4px;
+  margin-bottom: 50px;
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url('https://scontent.fsrg3-1.fna.fbcdn.net/v/t31.0-8/861045_494116127312624_1833663515_o.jpg?_nc_cat=105&ccb=2&_nc_sid=e3f864&_nc_eui2=AeFkCSU_FT8UgK83t-w9-BxsgfJAdfc-cV6B8kB19z5xXp_X9Fy8oqqZeWmZ6Xu9yLFwEgYCGLERG7AUIJkkxDKV&_nc_ohc=mBOownnFW-wAX_TQFZN&_nc_ht=scontent.fsrg3-1.fna&oh=3484505ae3831850bd68175ddf8d0a8a&oe=6042BB2A');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0vmax;
+  height: 395px;
 }
 
 .profile ul {
@@ -34,7 +36,7 @@ body {
 .profile img {
   width: 300px;
   height: 300px;
-  border-radius: 100%;
+  border-radius: 4px;
 }
 
 ul.tab {
@@ -44,16 +46,9 @@ ul.tab {
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 1em;
 }
 
 ul.tab li {
-  flex: 1 1 auto;
   margin: 0.5em 0;
   /*border-bottom: 2px solid #f2f2f2;*/
   cursor: pointer;
@@ -109,8 +104,21 @@ footer {
   border-radius: 4px;
 }
 
-/* @media (min-width: 768px) {
-  .container {
-    margin: 0 20rem;
+@media (max-width: 360px) {
+  .profile {
+    height: 220px;
+    margin-bottom: 50px;
+    border-radius: 0;
   }
-} */
+  .profile img {
+    width: 128px;
+    border-radius: 4px;
+  }
+  .profile ul {
+    margin: 1rem 0;
+    padding: 0.5rem;
+  }
+  /* .container {
+    margin: 0 20rem;
+  } */
+}
