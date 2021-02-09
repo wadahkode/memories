@@ -22,3 +22,9 @@
 <ul>
   <li>Add fitur countdown</li>
 </ul>
+
+### versi 1.1.8.1
+
+<ul>
+  <li>Support for timelist from database</li>
+</ul>

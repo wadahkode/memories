@@ -23,7 +23,7 @@ Mengubah waktu menjadi momen yang sudah berlalu, ibaratnya kapan waktu kenangan 
   datetime="12/7/2020, 16:11:00"
   prefix="birthday|expired|schedule|countdown"
 ></time>
-<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.8/build/memories.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.8.1/build/memories.min.js"></script>
 ...
 ```
 
