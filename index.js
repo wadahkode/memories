@@ -75,26 +75,26 @@ setInterval(() => {
         if (prefix == 'expired') {
           let statusExpired = getExpired(options);
           if (statusExpired) {
-            return (time.innerHTML = `expired: ${time.dateTime} <b>(sudah kadaluarsa)</b>`);
+            return (time.innerHTML = '<b>sudah</b>');
           } else {
-            return (time.innerHTML = `expired: ${time.dateTime} <b>(belum kadaluarsa)</b>`);
+            return (time.innerHTML = '<b>belum</b>');
           }
         } else if (prefix == 'schedule') {
           let status = getSchedule(options);
           if (status == undefined) clearInterval(refresh);
           if (status) {
-            return (time.innerHTML = time.dateTime + '<b> (sudah dimulai)</b>');
+            return (time.innerHTML = '<b>sudah dimulai</b>');
           } else {
-            return (time.innerHTML = time.dateTime + '<b> (belum dimulai)</b>');
+            return (time.innerHTML = '<b>belum dimulai</b>');
           }
         } else if (prefix == 'countdown') {
           let status = getCountdown(options);
 
           if (status.distance < 0) {
             clearInterval(refresh);
-            return (time.innerHTML = `Hot promo: tidak ada`);
+            return (time.innerHTML = `<b>sudah berakhir</b>`);
           } else {
-            return (time.innerHTML = `Hot promo: <b>${status.day}, ${status.hour} : ${status.minute} : ${status.second}</b>`);
+            return (time.innerHTML = `<b>${status.day}, ${status.hour} : ${status.minute} : ${status.second}</b>`);
           }
         } else {
           time.innerHTML = getMemories(options, prefix);
@@ -103,3 +103,9 @@ setInterval(() => {
     }
   });
 }, 20);
+
+module.exports = {
+  ref: (prop = Object | Array | undefined, isDebug = false) => {
+    return new memories(prop, isDebug);
+  },
+};

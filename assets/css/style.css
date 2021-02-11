@@ -122,3 +122,38 @@ footer {
     margin: 0 20rem;
   } */
 }
+
+.sidebar-docs {
+  position: fixed;
+  left: 0;
+}
+.sidebar-docs.active {
+  /* background-color: #333; */
+  position: fixed;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  overflow: auto;
+  transition: 0.3s ease-in-out all;
+}
+
+.navbar-collapse {
+  position: fixed;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+}
+
+.navbar-collapse.hidden {
+  position: static;
+}
+
+.navbar-toggler.active span:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 4px);
+  transition: 0.2s all;
+}
+
+.navbar-toggler.active span:nth-child(2) {
+  transform: rotate(-45deg) translate(2px, -2px);
+  transition: 0.2s all;
+}
