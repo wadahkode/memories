@@ -120,7 +120,7 @@ function howToInstall() {
             console.log(moment.timeAgo('birthday'))
         </div>
         <p class="mt-3">
-          Untuk lebih jelasnya anda dapat membaca dari sini <a href="" class="text-blue-500">README.md</a>
+          Untuk lebih jelasnya anda dapat membaca dari sini <a href="https://github.com/wadahkode/memories/tree/gh-pages" class="text-blue-500">README.md</a>
         </p>
       </div>
     </div>
