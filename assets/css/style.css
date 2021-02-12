@@ -171,24 +171,28 @@ footer {
 }
 
 .navbar-toggler {
-  width: 3.5rem;
-  height: 3.5rem;
-  padding: 1.25rem 1rem;
+  /*width: 3.5rem;
+  height: 2rem;*/
+  border-radius: 100%;
 }
 .navbar-toggler span {
-  width: 2em;
-  height: 0.4em;
-  margin: 0.26em 0;
-  display: block;
+  /*width: 1.5rem;*/
+  height: 0.2rem;
+  /*height: 0.3em;*/
+  /*margin: 0.26em 0;*/
+  /*display: block;*/
   transition: all 0.4s ease;
   transform-origin: 0 0;
+  border-radius: 3px;
+  border: 0px;
 }
+
 .navbar-toggler.active span:nth-child(1) {
-  transform: rotate(45deg) translate(0px, -8px);
+  transform: rotate(45deg) translate(2px, -5px);
   transition: 0.4s all;
 }
 
 .navbar-toggler.active span:nth-child(2) {
-  transform: rotate(-45deg) translate(0px, 8px);
+  transform: rotate(-45deg) translate(0px, 5px);
   transition: 0.4s all;
 }

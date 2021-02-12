@@ -36,7 +36,7 @@
             </button> -->
           </div>
           <ul
-            class="flex items-center justify-between dark:bg-transparent md:dark:bg-transparent dark:text-white md:dark:text-white md:border-t-0 bg-white md:top-0 md:p-0 md:bg-transparent md:relative md:flex gap-8 md:gap-0 @navbar-collapse"
+            class="w-30 flex @bg-red-500 items-center space-x-4 @justify-between dark:bg-transparent md:dark:bg-transparent dark:text-white md:dark:text-white md:border-t-0 bg-white md:top-0 md:p-0 md:bg-transparent md:relative md:flex gap-8 md:space-x-0 sm:space-x-0 lg:space-x-0 md:gap-0 @navbar-collapse"
           >
             <li class="@py-2 md:p-2">
               <a
@@ -279,21 +279,21 @@
       hljs.initHighlightingOnLoad();
 
       // button toggle
-      const navbarToggle = document.querySelector('.navbar-toggler');
-      navbarToggle.onclick = () => {
-        let target = document.querySelector('.navbar-collapse');
+      // const navbarToggle = document.querySelector('.navbar-toggler');
+      // navbarToggle.onclick = () => {
+      //   let target = document.querySelector('.navbar-collapse');
 
-        if (target.classList.contains('hidden')) {
-          target.classList.remove('hidden');
-          target.classList.add('top-80');
-          navbarToggle.classList.add('active');
-          document.querySelector('footer').classList.add('hidden');
-        } else {
-          target.classList.add('hidden');
-          navbarToggle.classList.remove('active');
-          document.querySelector('footer').classList.remove('hidden');
-        }
-      };
+      //   if (target.classList.contains('hidden')) {
+      //     target.classList.remove('hidden');
+      //     target.classList.add('top-80');
+      //     navbarToggle.classList.add('active');
+      //     document.querySelector('footer').classList.add('hidden');
+      //   } else {
+      //     target.classList.add('hidden');
+      //     navbarToggle.classList.remove('active');
+      //     document.querySelector('footer').classList.remove('hidden');
+      //   }
+      // };
     </script>
   </body>
 </html>
