@@ -171,16 +171,9 @@ footer {
 }
 
 .navbar-toggler {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   padding: 1rem;
-  background: rgb(215, 215, 215);
-  background: linear-gradient(
-    90deg,
-    rgba(215, 215, 215, 1) 0%,
-    rgba(216, 216, 221, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
 }
 .navbar-toggler span {
   width: 1.5em;
