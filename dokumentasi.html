@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mengubah waktu menjadi waktu moment</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+      rel="stylesheet"
+    /> -->
     <link href="assets/css/tailwind.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -20,7 +25,9 @@
       >
         <nav class="md:container md:mx-auto px-4 py-3 flex items-center">
           <div class="flex md:flex-1 items-center w-screen">
-            <a href="/memories" class="text-lg md:text-3xl flex-1">Memories</a>
+            <a href="/memories" class="text-lg font-semibold md:text-3xl flex-1"
+              >Memories</a
+            >
             <div class="md:hidden">
               <button
                 type="button"
@@ -220,7 +227,7 @@
                 </li>
               </ul>
               <a
-                href=""
+                href="#timeago"
                 class="bg-blue-500 rounded px-3 py-2 text-white hover:bg-blue-400"
                 >Lihat panduan</a
               >
@@ -260,7 +267,7 @@
                 </li>
               </ul>
               <a
-                href=""
+                href="#expired"
                 class="bg-red-600 rounded px-3 py-2 text-white hover:bg-red-500"
                 >Lihat panduan</a
               >
@@ -303,7 +310,7 @@
                 </li>
               </ul>
               <a
-                href=""
+                href="#schedule"
                 class="bg-yellow-500 rounded px-3 py-2 text-white hover:bg-yellow-400"
                 >Lihat panduan</a
               >
@@ -344,7 +351,7 @@
                 </li>
               </ul>
               <a
-                href=""
+                href="#countdown"
                 class="bg-green-500 rounded px-3 py-2 text-white hover:bg-green-400"
                 >Lihat panduan</a
               >
@@ -369,7 +376,7 @@
               kemudian menentukan expired dari sebuah produk, membuat jadwal dan
               membuat hitungan mundur.<br /><br />
               <a
-                href=""
+                href="#about-me"
                 class="bg-purple-500 p-2 md:p-2 rounded text-white hover:bg-purple-600"
                 >Baca selengkapnya...</a
               >
@@ -686,6 +693,106 @@ console.log(moment.timeAgo('birthday'))
           </p>
         </div>
       </div>
+    </div>
+
+    <div id="about-me" class="hidden">
+      <h1
+        class="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+      >
+        Tentang memories
+      </h1>
+      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
+        Memories adalah sebuah library javascript yang digunakan untuk mengubah
+        format waktu menjadi sebuah momen seperti waktu lalu, kemudian
+        menentukan expired dari sebuah produk, membuat jadwal dan membuat
+        hitungan mundur.
+      </p>
+
+      <h1
+        class="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+      >
+        Sejarah memories
+      </h1>
+      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
+        Berawal dari ketidaktahuan saya terhadap sebuah library javascript yaitu
+        <a href="https://momentjs.com/" class="text-blue-500">momentjs</a>, saya
+        membuat sendiri penghandle waktu untuk ditampilkan menjadi baru saja,
+        beberapa detik yang lalu, berapa menit yang lalu, berapa jam yang lalu,
+        berapa hari yang lalu, minggu, bulan dan tahun.
+      </p>
+      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
+        Awalnya memories hanya mendukung untuk memformat seperti diatas, tetapi
+        ketika ada seseorang yang bertanya pada sebuah group telegram, akhirnya
+        saya mengembangkan untuk mendukung lebih banyak format waktu.<br /><br />
+        dan berikut beberapa dukungan yang saat ini tersedia:<br />
+        <ul>
+          <li>
+            1. Timeago (Format waktu yang berlalu)
+          </li>
+          <li>
+            2. Expired (Menentukan kadaluarsa dari sebuah produk)
+          </li>
+          <li>
+            3. Schedule (Membuat sebuah jadwal waktu)
+          </li>
+          <li>
+            4. Countdown (Menghitung waktu mundur)
+          </li>
+          <li>
+            5. Birthday (Format waktu untuk umur)
+          </li>
+        </ul>
+      </p>
+      <h1
+        class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+      >
+        Visi
+      </h1>
+      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
+        - Terus berkembang
+      </p>
+      <h1
+        class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+      >
+        Misi
+      </h1>
+      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
+        - Menjadi alternatif bagi yang mencari penanganan waktu berbahasa indonesia.
+      </p>
+      <h1
+        class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+      >
+        Pembuat
+      </h1>
+      <div class="w-4/4 my-3 md:w-3/4 md:my-3 flex flex-col items-center gap-4 md:flex-none sm:flex-none md:grid md:grid-cols-4">
+        <div class="md:col-start-1">
+          <img class="w-36 h-36 rounded-full"
+            src="https://scontent.fsrg3-1.fna.fbcdn.net/v/t1.0-9/38562_102830739774500_4117273_n.jpg?_nc_cat=101&ccb=2&_nc_sid=ba80b0&_nc_eui2=AeE3BEiy5Y_h4Gb_RhCZGTGIlc3OiHmHlB-Vzc6IeYeUH-EvlUOl7XjqRNi78C9xO5xX6lsD61pXSEWfqzjZql7R&_nc_ohc=4MFgetVu0BoAX__RYrO&_nc_ht=scontent.fsrg3-1.fna&oh=d28e06635ece4b0469152c9e6b65a4c3&oe=6042ED26"
+          />
+        </div>
+        <div class="md:col-start-2 md:col-span-4">
+          Nama saya Ayus Irfang Filaras dari kota Tegal, Jawa Tengah.
+          Pendidikan saya hanya sampai Sekolah Menengah Pertama, mengenal dunia teknologi sejak menjadi operator warnet,
+          koding sudah menjadi hobi yang saya sukai.<br><br>
+          <i><b><u> Terus berkarya walaupun tak bernilai </u></b></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="timeago" class="hidden">
+      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+    </div>
+
+    <div id="expired" class="hidden">
+      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+    </div>
+
+    <div id="schedule" class="hidden">
+      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+    </div>
+
+    <div id="countdown" class="hidden">
+      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
     </div>
     <!-- End Content Collection -->
 

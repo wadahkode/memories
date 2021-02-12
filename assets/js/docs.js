@@ -12,7 +12,9 @@ function main(e) {
   let el = document.querySelector(e.target.hash);
 
   if (el !== '') {
-    elementForPrinted(el.id).then((response) => {
+    const printed = elementForPrinted(el.id);
+
+    printed.then((response) => {
       if (response !== null) {
         statusElement = true;
         container.innerHTML = `
@@ -26,17 +28,42 @@ function main(e) {
 }
 
 async function elementForPrinted(id) {
+  let content;
+
   switch (id) {
     case 'how-to-install':
-      return await howToInstall(id);
+      content = await howToInstall(id);
+      break;
+
+    case 'about-me':
+      content = await aboutMe(id);
+      break;
+
+    case 'timeago':
+      content = await timeAgo(id);
+      break;
+    case 'expired':
+      content = await expired(id);
+      break;
+    case 'schedule':
+      content = await schedule(id);
+      break;
+    case 'countdown':
+      content = await countdown(id);
+      break;
   }
+
+  return content;
 }
 
-function howToInstall(id) {
-  let el = document.getElementById(id);
+const aboutMe = async (id) => document.getElementById(id).innerHTML;
 
-  return el.innerHTML;
-}
+const howToInstall = async (id) => document.getElementById(id).innerHTML;
+
+const timeAgo = async (id) => document.getElementById(id).innerHTML;
+const expired = async (id) => document.getElementById(id).innerHTML;
+const schedule = async (id) => document.getElementById(id).innerHTML;
+const countdown = async (id) => document.getElementById(id).innerHTML;
 
 document.querySelectorAll('a').forEach((item) => {
   item.onclick = (e) => main(e);

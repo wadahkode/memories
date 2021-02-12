@@ -22,7 +22,9 @@
           class="md:container md:mx-auto px-4 py-3 md:p-4 flex @flex-wrap gap-x-4 md:flex-nowrap items-center gap-y-2 md:gap-y-0"
         >
           <div class="flex-1">
-            <a href="/memories" class="text-lg md:text-3xl">Memories</a>
+            <a href="/memories" class="text-lg font-semibold md:text-3xl"
+              >Memories</a
+            >
             <!-- <button
               type="button"
               class="w-9 h-9 rounded md:hidden focus:outline-none navbar-toggler rounded px-2 py-3 flex flex-wrap gap-1"
@@ -41,7 +43,7 @@
             <li class="@py-2 md:p-2">
               <a
                 href="/memories/dokumentasi.html"
-                class="py-2 md:p-2 sm:p-2 rounded flex items-center gap-2 text-black dark:text-gray-50"
+                class="py-2 md:p-2 sm:p-2 rounded flex items-center gap-2 text-black font-semibold dark:text-gray-50"
               >
                 <span class="hidden md:block">Dokumentasi</span>
                 <svg
@@ -61,7 +63,7 @@
             <li class="@py-2 md:p-2">
               <a
                 href="https://github.com/wadahkode/memories/archive/dev.zip"
-                class="md:bg-blue-600 py-2 md:p-2 sm:p-2 rounded flex items-center gap-2 md:text-white @w-28 md:w-auto"
+                class="md:bg-blue-600 py-2 md:p-2 sm:p-2 rounded flex items-center gap-2 md:text-white font-semibold @w-28 md:w-auto"
               >
                 <span class="hidden md:block">Download</span>
                 <svg
@@ -123,12 +125,12 @@
         >
           <a
             href="#getting-started"
-            class="bg-green-400 px-6 py-3 sm:col-start-2 md:col-start-1 sm:py-3 sm:px-6 md:px-6 md:py-3 rounded-full shadow-md text-white mx-auto btn-getting-started"
+            class="bg-green-400 px-6 py-3 sm:col-start-2 md:col-start-1 sm:py-3 sm:px-6 md:px-6 md:py-3 rounded-full shadow-md text-white font-semibold mx-auto btn-getting-started"
             >Mulai cepat</a
           >
           <a
             href="https://github.com/wadahkode/memories"
-            class="bg-purple-400 px-6 py-3 sm:py-3 sm:px-6 md:px-6 md:py-3 rounded-full shadow-md text-white mx-auto flex items-center gap-2"
+            class="bg-purple-400 px-6 py-3 sm:py-3 sm:px-6 md:px-6 md:py-3 rounded-full shadow-md text-white font-semibold mx-auto flex items-center gap-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +170,8 @@
       <div class="md:mt-2">
         <textarea id="code-getting-started" class="hidden">
 &lt;time datetime="12/7/2020, 16:11:00" prefix="birthday"&gt;&lt;/time&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.81/build/memories.min.js"&gt;&lt;/script&gt;"</textarea>
+&lt;script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.81/build/memories.min.js"&gt;&lt;/script&gt;"</textarea
+        >
         <pre
           class="html"
         ><code class="rounded">&lt;time datetime="12/7/2020, 16:11:00" prefix="birthday"&gt;&lt;/time&gt;<br>&lt;script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.81/build/memories.min.js"&gt;&lt;/script&gt;</code></pre>
@@ -287,18 +290,18 @@
           targetOpen.classList.add('hidden');
         }
       }
-      
+
       btnCopy.onclick = () => {
         targetCopy.classList.remove('hidden');
         targetCopy.select();
-        targetCopy.setSelectionRange(0,99999);
-        
-        if (document.execCommand("copy")) {
+        targetCopy.setSelectionRange(0, 99999);
+
+        if (document.execCommand('copy')) {
           targetCopy.classList.add('hidden');
-          btnCopy.innerHTML = "✔ tersalin";
+          btnCopy.innerHTML = '✔ tersalin';
         }
       };
-      
+
       hljs.initHighlightingOnLoad();
 
       // button toggle
