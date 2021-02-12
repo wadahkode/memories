@@ -171,9 +171,9 @@ footer {
 }
 
 .navbar-toggler {
-  width: 4rem;
-  height: 4rem;
-  padding: 1.5rem 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 1.25rem 1rem;
 }
 .navbar-toggler span {
   width: 2em;
