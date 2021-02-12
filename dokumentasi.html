@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="bg-gray-50 overflow-hidden">
+  <body class="bg-gray-50 overflow-hidden scrollbar-thumb">
     <div class="bg-white dark:bg-gray-800 dark:text-white">
       <!-- Header -->
       <header
@@ -21,23 +21,63 @@
         <nav class="md:container md:mx-auto px-4 py-3 flex items-center">
           <div class="flex md:flex-1 items-center w-screen">
             <a href="/memories" class="text-lg md:text-3xl flex-1">Memories</a>
+            <div class="md:hidden">
+              <button
+                type="button"
+                class="@absolute @top-0 @left-0 @w-64 @bg-red-600 p-2 rounded-0 focus:outline-none btn-mode-theme flex items-center gap-2 md:p-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-moon"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
+                  />
+                </svg>
+              </button>
+            </div>
             <button
               type="button"
-              class="w-9 h-9 rounded md:hidden focus:outline-none navbar-toggler rounded px-2 py-3 flex flex-wrap gap-1"
+              class="fixed bottom-8 right-5 w-9 h-9 navbar-toggler rounded-full px-2 py-3 bg-gray-300 shadow dark:bg-gray-900 flex flex-wrap gap-1 md:hidden focus:outline-none"
             >
               <span
-                class="border border-gray-800 dark:border-white w-screen"
+                class="border border-gray-800 bg-gray-800 dark:bg-white dark:border-white w-screen ntx"
               ></span>
               <span
-                class="border border-gray-800 dark:border-white w-screen"
+                class="border border-gray-800 bg-gray-800 dark:bg-white dark:border-white w-screen nty"
               ></span>
             </button>
           </div>
           <ul class="hidden md:flex items-center">
             <li class="md:p-2">
+              <button
+                type="button"
+                class="@bg-red-500 p-2 rounded focus:outline-none btn-mode-theme flex items-center gap-2 md:p-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-moon"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li class="md:p-2">
               <a
                 href="https://github.com/wadahkode/memories/archive/1.1.8.zip"
-                class="bg-blue-600 p-2 rounded flex items-center gap-2 text-white"
+                class="bg-blue-600 p-2 rounded flex items-center gap-2 text-white hover:bg-blue-500"
               >
                 <span>Download</span>
                 <svg
@@ -57,27 +97,6 @@
                 </svg>
               </a>
             </li>
-            <li class="md:p-2">
-              <button
-                type="button"
-                class="bg-red-500 p-2 rounded focus:outline-none btn-mode-theme flex items-center gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-moon"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
-                  />
-                </svg>
-                <span class="text-white">ganti tema</span>
-              </button>
-            </li>
           </ul>
         </nav>
       </header>
@@ -85,9 +104,11 @@
 
       <!-- Sidebar -->
       <aside
-        class="sidebar-docs w-56 hidden bg-white shadow-2xl dark:bg-gray-900 z-30 dark:shadow-2xl md:bg-transparent md:dark:bg-transparent md:z-auto md:block md:top-20 md:container md:mx-auto md:px-10 md:w-72 md:h-screen md:pt-6 md:flex-none @flex @items-center overflow-y-auto md:dark:border-transparent shadow-2xl md:dark:shadow"
+        class="sidebar-docs w-56 hidden bg-white shadow-2xl dark:bg-gray-900 z-30 dark:shadow-2xl md:bg-transparent md:dark:bg-transparent md:z-auto md:block md:top-20 md:container md:mx-auto md:px-10 md:w-72 md:h-screen md:pt-6 md:flex-none @flex @items-center md:dark:border-transparent shadow-2xl md:dark:shadow"
       >
-        <div class="mt-12 md:mt-auto">
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 rounded mt-2 md:mt-auto ease-in-out duration-300"
+        >
           <a
             href="dokumentasi.html"
             class="w-64 px-4 py-2 text-left focus:outline-none flex items-center font-semibold"
@@ -110,10 +131,12 @@
                 d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"
               />
             </svg>
-            <span class="ml-2 text-black dark:text-white">Dokumentasi</span>
+            <span class="ml-2 @text-black @dark:text-white">Dokumentasi</span>
           </a>
         </div>
-        <div>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 rounded ease-in-out duration-300"
+        >
           <button
             type="button"
             class="w-64 px-4 py-2 text-left focus:outline-none flex items-center font-semibold"
@@ -133,38 +156,15 @@
             <span class="ml-2">Uji coba (belum rilis)</span>
           </button>
         </div>
-        <div>
-          <h1
-            class="w-64 mt-4 px-4 py-2 text-left focus:outline-none flex items-center font-semibold"
-          >
-            Mulai sekarang
-          </h1>
-          <ul class="w-64 px-4 text-left focus:outline-none flex items-center">
-            <li>
-              <a href="#how-to-install">cara install</a>
-            </li>
-          </ul>
-        </div>
-        <div class="md:hidden">
-          <button
-            type="button"
-            class="absolute top-0 left-0 w-64 bg-red-600 px-4 py-2 rounded-0 focus:outline-none btn-mode-theme flex items-center gap-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-moon"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
-              />
-            </svg>
-            <span class="text-white">ganti tema</span>
-          </button>
+        <h1
+          class="w-64 mt-4 px-4 pb-2 text-left focus:outline-none flex items-center font-semibold"
+        >
+          Mulai sekarang
+        </h1>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 py-2 cursor-pointer flex"
+        >
+          <a href="#how-to-install" class="w-screen">Cara install</a>
         </div>
       </aside>
       <!-- End sidebar -->
@@ -174,22 +174,20 @@
         class="grid grid-cols-1 gap-0 h-screen pt-14 overflow-y-auto md:gap-2 @md:container @md:mx-auto md:grid md:grid-cols-4 sm:grid sm:grid-cols-6 md:pt-20 md:pr-10 @bg-purple-400"
       >
         <div
-          class="bg-white dark:bg-transparent shadow-2xl dark:shadow-md col-start-2 col-span-4 mt-6 p-4 h-auto md:p-6 rounded md:col-start-2 md:col-span-4 md:mt-6 md:h-auto md:p-6"
+          class="bg-white dark:bg-transparent shadow-2xl dark:shadow-md col-start-2 col-span-4 mt-6 p-4 h-auto md:p-6 rounded md:col-start-2 md:col-span-4 md:mt-2 md:h-auto md:p-6 break-words"
         >
           <div class="mb-3 p-2 bg-green-500 text-white rounded">
             <b>Pengumuman:</b> dokumentasi ini masih dalam tahap pengerjaan,
             lebih baik gunakan v1.1.81, setelah dokumentasi ini selesai versi
             akan ditingkatkan sesuai dengan yang dibutuhkan.
           </div>
-          <h1
-            class="font-bold text-2xl w-4/4 mb-4 md:text-3xl md:w-3/4 md:mb-4"
-          >
+          <h1 class="font-bold text-xl mb-4 md:text-3xl md:w-3/4 md:mb-4">
             Mulai cepat dengan pustaka memories, atur waktu anda menjadi seperti
             dibawah ini:
           </h1>
           <ul class="grid grid-cols-1 gap-3 md:grid md:grid-cols-4 md:gap-4">
             <li
-              class="bg-gray-700 text-white dark:bg-white dark:text-black rounded border shadow-lg px-4 py-6 md:px-4 md:py-6"
+              class="bg-gray-50 text-gray-600 ease-in-out all duration-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:bg-gray-700 dark:text-gray-50 rounded @border shadow-lg px-4 py-6 md:px-4 md:py-6"
             >
               <h1 class="text-lg font-bold flex items-center gap-2">
                 <svg
@@ -221,7 +219,9 @@
                   </b>
                 </li>
               </ul>
-              <a href="" class="bg-blue-500 rounded px-3 py-2 text-white"
+              <a
+                href=""
+                class="bg-blue-500 rounded px-3 py-2 text-white hover:bg-blue-400"
                 >Lihat panduan</a
               >
               <!-- <div class="mt-4">
@@ -231,7 +231,7 @@
               </div> -->
             </li>
             <li
-              class="bg-gray-700 text-white dark:bg-white dark:text-black rounded border shadow-lg px-4 py-6 md:px-4 md:py-6"
+              class="bg-gray-50 text-gray-600 ease-in-out all duration-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:bg-gray-700 dark:text-gray-50 rounded @border shadow-lg px-4 py-6 md:px-4 md:py-6"
             >
               <h1 class="text-lg font-bold flex items-center gap-2">
                 <svg
@@ -259,7 +259,9 @@
                   ></time>
                 </li>
               </ul>
-              <a href="" class="bg-red-500 rounded px-3 py-2 text-white"
+              <a
+                href=""
+                class="bg-red-600 rounded px-3 py-2 text-white hover:bg-red-500"
                 >Lihat panduan</a
               >
               <!-- <div class="mt-3">
@@ -269,7 +271,7 @@
               </div> -->
             </li>
             <li
-              class="bg-gray-700 text-white dark:bg-white dark:text-black rounded border shadow-lg px-4 py-6 md:px-4 md:py-6"
+              class="bg-gray-50 text-gray-600 ease-in-out all duration-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:bg-gray-700 dark:text-gray-50 rounded @border shadow-lg px-4 py-6 md:px-4 md:py-6"
             >
               <h1 class="text-lg font-bold flex items-center gap-2">
                 <svg
@@ -300,7 +302,9 @@
                   ></time>
                 </li>
               </ul>
-              <a href="" class="bg-yellow-500 rounded px-3 py-2 text-white"
+              <a
+                href=""
+                class="bg-yellow-500 rounded px-3 py-2 text-white hover:bg-yellow-400"
                 >Lihat panduan</a
               >
               <!-- <div class="mt-4">
@@ -310,7 +314,7 @@
               </div> -->
             </li>
             <li
-              class="bg-gray-700 text-white dark:bg-white dark:text-black rounded border shadow-lg px-4 py-6 md:px-4 md:py-6"
+              class="bg-gray-50 text-gray-600 ease-in-out all duration-300 hover:bg-gray-100 dark:hover:bg-gray-900 dark:bg-gray-700 dark:text-gray-50 rounded @border shadow-lg px-4 py-6 md:px-4 md:py-6"
             >
               <h1 class="text-lg font-bold flex items-center gap-2">
                 <svg
@@ -339,7 +343,9 @@
                   ></time>
                 </li>
               </ul>
-              <a href="" class="bg-green-500 rounded px-3 py-2 text-white"
+              <a
+                href=""
+                class="bg-green-500 rounded px-3 py-2 text-white hover:bg-green-400"
                 >Lihat panduan</a
               >
               <!-- <div class="mt-4">
@@ -351,7 +357,7 @@
           </ul>
         </div>
         <div
-          class="bg-white dark:bg-transparent shadow-2xl dark:shadow-md col-start-2 col-span-4 mt-10 px-4 md:col-start-2 md:col-span-4 md:h-auto md:mt-16 md:mt-10 md:p-6 rounded"
+          class="bg-white dark:bg-transparent shadow-2xl dark:shadow-md col-start-2 col-span-4 mt-10 px-4 md:col-start-2 md:col-span-4 md:h-auto md:mt-6 md:p-6 rounded"
         >
           <div>
             <h1 class="text-2xl font-bold mt-3 md:text-3xl">
@@ -381,12 +387,12 @@
               >
             </div>
             <ul
-              class="bg-gray-100 dark:bg-white rounded shadow p-2 md:p-2 sm:p-5 dark:text-black"
+              class="bg-gray-100 dark:bg-gray-700 rounded shadow p-2 md:p-4 sm:p-5 dark:text-gray-50"
             >
               <li class="mb-6 pb-2">
                 <article>
                   <h3
-                    class="font-semibold text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:ml-0 md:mb-1"
+                    class="font-semibold @text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:ml-0 md:mb-1"
                   >
                     Memories v1.1.81
                   </h3>
@@ -401,7 +407,7 @@
               <li class="my-6 py-2 border-t">
                 <article>
                   <h3
-                    class="font-semibold text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
+                    class="font-semibold @text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
                   >
                     Memories v1.1.8
                   </h3>
@@ -415,7 +421,7 @@
               <li class="my-6 py-2 border-t">
                 <article>
                   <h3
-                    class="font-semibold text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
+                    class="font-semibold @text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
                   >
                     Memories v1.1.7
                   </h3>
@@ -430,7 +436,7 @@
               <li class="my-6 py-2 border-t">
                 <article>
                   <h3
-                    class="font-semibold text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
+                    class="font-semibold @text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
                   >
                     Memories v1.1.6
                   </h3>
@@ -442,10 +448,10 @@
                   </p>
                 </article>
               </li>
-              <li class="my-6 py-2 border-t">
+              <li class="mt-6 py-2 border-t">
                 <article>
                   <h3
-                    class="font-semibold text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
+                    class="font-semibold @text-gray-900 col-start-2 col-span-2 md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 md:mb-1 md:ml-0"
                   >
                     Memories v1.1.5
                   </h3>
@@ -463,7 +469,9 @@
             <div
               class="flex items-center flex-wrap md:flex-nowrap gap-6 md:gap-4"
             >
-              <div>
+              <div
+                class="bg-transparent hover:bg-gray-100 ease-in-out duration-300 dark:hover:bg-gray-700 rounded"
+              >
                 <a href="https://github.com/wadahkode/memories/issues">
                   <div class="flex gap-6 md:gap-2">
                     <svg
@@ -491,7 +499,9 @@
                   </div>
                 </a>
               </div>
-              <div>
+              <div
+                class="bg-transparent hover:bg-gray-100 ease-in-out duration-300 dark:hover:bg-gray-700 rounded"
+              >
                 <a href="https://t.me/forumilmuteknologi">
                   <div class="flex gap-4 md:gap-2">
                     <svg
@@ -533,14 +543,160 @@
     </div>
 
     <!-- Content Collection -->
-    <div id="how-to-install" class="hidden">install</div>
+    <div id="how-to-install" class="hidden">
+      <h1 class="text-2xl md:text-3xl text-gray-600 dark:text-white font-bold">
+        Instalasi
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-white">
+        Panduan instalasi pustaka memories
+      </p>
+      <hr class="my-6" />
+
+      <div>
+        <h1 class="text-lg md:text-2xl text-gray-600 dark:text-white font-bold">
+          Menggunakan CDN
+        </h1>
+        <div
+          class="@text-white dark:text-gray-600 mt-4 rounded-full overflow-y-hidden"
+        >
+          <pre><code class="border shadow-md rounded-full hover:bg-gray-100">&lt;script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.81/build/memories.min.js"&gt;&lt;/script&gt;</code></pre>
+
+          <!-- <pre
+            class="py-2"
+          ><code class="p-2 bg-gray-700 dark:bg-white rounded-full md:px-4 md:py-3">&lt;script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.81/build/memories.min.js"&gt;&lt;/script&gt;</code></pre> -->
+        </div>
+        <p class="my-6 text-gray-600 dark:text-white">
+          Tidak ada konfigurasi jika anda menggunakan CDN, cukup buat element
+          baru seperti dibawah ini:
+        </p>
+        <div
+          class="@text-white dark:text-gray-600 mt-4 rounded-full overflow-y-hidden"
+        >
+          <pre><code class="border shadow-md rounded-full hover:bg-gray-100">&lt;time datetime="12/7/2020, 16:11:00" prefix="birthday|expired|schedule|countdown"&gt;&lt;/time&gt;</code></pre>
+          <!-- <pre
+            class="py-2"
+          ><code class="p-2 bg-gray-700 dark:bg-white rounded-full md:px-4 md:py-3">&lt;time datetime="12/7/2020, 16:11:00" prefix="birthday|expired|schedule|countdown"&gt;&lt;/time&gt;</code></pre> -->
+        </div>
+        <h1 class="text-lg text-gray-600 dark:text-white mt-6">
+          Datetime attributes:
+        </h1>
+        <ol class="text-gray-600 dark:text-white">
+          <li>
+            <div class="my-2">1. datetime</div>
+            <div class="my-2">
+              Isi dengan tanggal, rekomendasi gunakan format seperti ini:
+              <div
+                class="@text-white dark:text-gray-600 mt-4 rounded-full overflow-y-hidden"
+              >
+                <pre><code class="border shadow-md rounded-full hover:bg-gray-100">datetime="12/7/2020, 16:11:00"</code></pre>
+                <!-- <pre
+                  class="py-2"
+                ><code class="p-2 bg-gray-700 dark:bg-white rounded-full md:px-4 md:py-3">datetime="12/7/2020, 16:11:00"</code></pre> -->
+              </div>
+            </div>
+            <div class="my-4">
+              Penjelasan:
+              <ul>
+                <li>- Angka 12 adalah bulan</li>
+                <li>- Angka 7 adalah hari</li>
+                <li>- Angka 2020 adalah tahun</li>
+                <li>- Angka 16 adalah jam</li>
+                <li>- Angka 11 adalah menit</li>
+                <li>- Angka 00 adalah detik</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="my-4">2. prefix</div>
+            <div class="my-4">
+              Isi dengan birthday atau expired atau schedule atau countdown,
+              contoh:
+              <div
+                class="text-white dark:text-gray-600 mt-4 rounded-full overflow-y-hidden"
+              >
+                <pre><code class="border shadow-md rounded-full hover:bg-gray-100">prefix="birthday"</code></pre>
+                <!-- <pre
+                  class="py-2"
+                ><code class="p-2 bg-gray-700 dark:bg-white rounded-full md:px-4 md:py-3">prefix="birthday"</code></pre> -->
+              </div>
+            </div>
+          </li>
+          <li>
+            <h1 class="text-lg md:text-2xl font-bold">
+              Modifikasi dengan konfigurasi
+            </h1>
+            <p class="mt-3">
+              Secara otomatis pustaka memories akan mengembalikan sebuah object
+              baru {ref: f}, yang dapat anda gunakan di browser untuk melakukan
+              konfigurasi secara manual dari mulai mengatur bahasa, menentukan
+              tanggal, menentukan zona waktu dan lain-lain.<br /><br />
+              Untuk lebih lanjut lihat contoh dibawah ini:
+            </p>
+            <div
+              class="@bg-gray-800 @text-white @dark:bg-white @dark:text-gray-600 mt-4 @rounded-full @overflow-y-hidden p-2 rounded"
+            >
+              <pre><code class="border shadow-md rounded hover:bg-gray-100">&lt;script&gt;
+&nbsp;&nbsp;const ref = Memories.ref();
+&nbsp;&nbsp;ref.set('datetime', '1/1/1970');
+&nbsp;&nbsp;// Cetak umur
+&nbsp;&nbsp;console.log(ref.timeAgo('birthday'))
+&lt;/script&gt;
+</code></pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="mt-10 text-gray-600 dark:text-white">
+        <h1 class="text-lg md:text-2xl font-bold">Menggunakan NPM</h1>
+        <p class="mt-2 text-gray-600 dark:text-white">
+          Pustaka memories telah tersedia di NPM, untuk mengunduhnya anda dapat
+          menggunakan perintah dibawah ini:
+        </p>
+        <div
+          class="text-white dark:text-gray-600 mt-4 rounded-full overflow-y-hidden"
+        >
+          <pre><code class="border shadow-md rounded-full hover:bg-gray-100">npm install @wadahkode/memories --save-dev</code></pre>
+          <!-- <pre
+            class="py-2"
+          ><code class="p-2 bg-gray-700 dark:bg-white rounded-full md:px-4 md:py-3">npm install @wadahkode/memories --save-dev</code></pre> -->
+        </div>
+        <div class="mt-6">
+          <h1 class="text-lg font-bold">
+            Cara menggunakan pada lingkungan nodejs
+          </h1>
+          <div
+            class="@bg-gray-800 @text-white @dark:bg-white @dark:text-gray-600 mt-4 @rounded-full @overflow-y-hidden @p-2 rounded"
+          >
+            <pre><code class="border shadow-md rounded hover:bg-gray-100">const memories = require('@wadahkode/memories')
+const moment = new memories();
+// atur tanggal
+moment.set('datetime', '1/1/1970');
+// cetak umur
+console.log(moment.timeAgo('birthday'))
+</code></pre>
+          </div>
+          <p class="mt-3">
+            Untuk lebih jelasnya anda dapat membaca dari sini
+            <a
+              href="https://github.com/wadahkode/memories/tree/gh-pages"
+              class="text-blue-500"
+              >README.md</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
     <!-- End Content Collection -->
 
     <!--<script src="https://cdn.jsdelivr.net/npm/@wadahkode/memories@1.1.1/build/memories.min.js"></script>-->
     <script src="build/memories.min.js"></script>
+    <script src="assets/vendor/highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="assets/js/docs.js"></script>
     <!-- <script src="assets/js/master.js"></script> -->
-    <script src="assets/vendor/highlight/highlight.pack.js"></script>
     <script>
       const btnModeTheme = document.querySelectorAll('.btn-mode-theme');
 
@@ -558,7 +714,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z" />
             </svg>
-            <span class="text-white">ganti tema</span>
+            
             `;
           } else {
             document.documentElement.classList.add('dark');
@@ -568,7 +724,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
                 <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
               </svg>
-              <span class="text-white">ganti tema</span>
+              
             `;
           }
         };
@@ -584,7 +740,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
                 <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
               </svg>
-              <span class="text-white">ganti tema</span>
+              
             `;
           document.documentElement.classList.add('dark');
         } else {
@@ -603,29 +759,39 @@
                   d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
                 />
               </svg>
-              <span class="text-white">ganti tema</span>
+              
             `;
           document.documentElement.classList.remove('dark');
         }
       });
 
-      hljs.initHighlightingOnLoad();
       // button toggle
       const navbarToggle = document.querySelector('.navbar-toggler');
-      navbarToggle.onclick = () => {
-        let target = document.querySelector('.sidebar-docs');
+      const target = document.querySelector('.sidebar-docs');
 
+      navbarToggle.onclick = () => {
         if (target.classList.contains('hidden')) {
           target.classList.remove('hidden');
           target.classList.add('top-80');
           target.classList.add('active');
           navbarToggle.classList.add('active');
-          document.querySelector('footer').classList.add('hidden');
+          // document.querySelector('footer').classList.add('hidden');
         } else {
           target.classList.add('hidden');
           navbarToggle.classList.remove('active');
           // document.querySelector('footer').classList.remove('hidden');
         }
+        target.onmouseleave = function () {
+          if (target.classList.contains('hidden')) {
+            target.classList.remove('hidden');
+            target.classList.add('top-80');
+            target.classList.add('active');
+            navbarToggle.classList.add('active');
+          } else {
+            target.classList.add('hidden');
+            navbarToggle.classList.remove('active');
+          }
+        };
       };
     </script>
   </body>

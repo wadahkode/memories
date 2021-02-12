@@ -19,11 +19,11 @@
         class="bg-white dark:bg-gray-800 dark:text-white fixed top-0 w-full"
       >
         <nav
-          class="md:container md:mx-auto px-4 py-3 md:p-4 flex flex-wrap md:flex-nowrap items-center gap-y-2 md:gap-y-0"
+          class="md:container md:mx-auto px-4 py-3 md:p-4 flex @flex-wrap gap-x-4 md:flex-nowrap items-center gap-y-2 md:gap-y-0"
         >
-          <div class="flex md:flex-1 items-center w-screen">
-            <a href="/memories" class="text-lg md:text-3xl flex-1">Memories</a>
-            <button
+          <div class="flex-1">
+            <a href="/memories" class="text-2xl md:text-3xl">Memories</a>
+            <!-- <button
               type="button"
               class="w-9 h-9 rounded md:hidden focus:outline-none navbar-toggler rounded px-2 py-3 flex flex-wrap gap-1"
             >
@@ -33,20 +33,37 @@
               <span
                 class="border border-gray-800 dark:border-white w-screen"
               ></span>
-            </button>
+            </button> -->
           </div>
           <ul
-            class="hidden border-t border-gray-300 dark:border-gray-700 dark:bg-gray-900 md:dark:bg-transparent dark:text-white md:dark:text-white md:border-t-0 bg-white px-4 py-2 md:top-0 md:p-0 md:bg-transparent md:relative md:flex items-center navbar-collapse"
+            class="flex dark:bg-transparent md:dark:bg-transparent dark:text-white md:dark:text-white md:border-t-0 bg-white md:top-0 md:p-0 md:bg-transparent md:relative md:flex items-right gap-4 md:gap-0 @navbar-collapse"
           >
-            <li class="py-2 md:p-2">
-              <a href="/memories/dokumentasi.html">Dokumentasi</a>
-            </li>
-            <li class="py-2 md:p-2">
+            <li class="@py-2 md:p-2">
               <a
-                href="https://github.com/wadahkode/memories/archive/1.1.8.zip"
-                class="bg-blue-600 p-2 rounded flex items-center gap-2 text-white w-28 md:w-auto"
+                href="/memories/dokumentasi.html"
+                class="py-2 md:p-2 sm:p-2 rounded flex items-center gap-2 text-black dark:text-gray-50"
               >
-                <span>Download</span>
+                <span class="hidden md:block">Dokumentasi</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-book md:hidden"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="@py-2 md:p-2">
+              <a
+                href="https://github.com/wadahkode/memories/archive/dev.zip"
+                class="md:bg-blue-600 py-2 md:p-2 sm:p-2 rounded flex items-center gap-2 md:text-white @w-28 md:w-auto"
+              >
+                <span class="hidden md:block">Download</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -65,14 +82,14 @@
               </a>
             </li>
             <li class="md:p-2">
-              <button
-                type="button"
-                class="bg-red-500 p-2 rounded focus:outline-none btn-mode-theme flex items-center gap-2"
+              <a
+                href="#"
+                class="md:bg-red-500 py-2 md:p-3 sm:p-3 rounded focus:outline-none btn-mode-theme flex items-center gap-2 md:gap-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="20"
+                  height="20"
                   fill="currentColor"
                   class="bi bi-moon"
                   viewBox="0 0 16 16"
@@ -82,8 +99,8 @@
                     d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
                   />
                 </svg>
-                <span class="text-white">ganti tema</span>
-              </button>
+                <span class="hidden @text-white">ganti tema</span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -95,23 +112,23 @@
         class="grid grid-cols-1 md:container md:mx-auto md:grid md:grid-cols-6 sm:bg-transparent sm:grid sm:pt-0 sm:grid-cols-5 gap-2 h-screen pt-0 md:pt-10"
       >
         <div
-          class="bg-transparent col-start-3 col-span-2 flex items-end md:col-start-2 md:col-span-4 sm:col-span-3 sm:col-start-2"
+          class="@bg-blue-400 col-start-1 col-span-6 h-28 mt-40 mb-6 flex @items-end items-center justify-center md:col-start-1 md:col-span-6 md:h-10 md:mt-52 sm:col-span-6 sm:col-start-1 sm:container sm:mx-auto sm:h-28 sm:mt-48"
         >
           <h1 class="text-3xl text-center">
             Mengubah waktu menjadi momen, buat waktu momen anda.
           </h1>
         </div>
         <div
-          class="bg-transparent col-start-3 col-span-2 flex items-start mt-4 md:items-center md:col-start-3 md:col-span-2 sm:bg-transparent sm:col-span-3 sm:col-start-2 sm:h-16 md:h-20 md:mt-0 sm:mt-6 sm:items-center"
+          class="container mx-auto @bg-blue-400 col-start-1 col-span-6 h-12 grid grid-cols-2 sm:grid sm:grid-cols-4 md:grid md:grid-cols-2 -mt-36 md:col-start-3 md:col-span-2 md:-mt-40 md:h-12 sm:col-start-1 sm:col-span-6 sm:h-12 sm:-mt-40 @flex @items-start"
         >
           <a
             href="#getting-started"
-            class="bg-green-400 py-3 px-6 rounded-full shadow-md text-white mx-auto btn-getting-started"
+            class="bg-green-400 px-6 py-3 sm:col-start-2 md:col-start-1 sm:py-3 sm:px-6 md:px-6 md:py-3 rounded-full shadow-md text-white mx-auto btn-getting-started"
             >Mulai cepat</a
           >
           <a
             href="https://github.com/wadahkode/memories"
-            class="bg-purple-400 py-3 px-6 rounded-full shadow-md text-white mx-auto flex items-center gap-2"
+            class="bg-purple-400 px-6 py-3 sm:py-3 sm:px-6 md:px-6 md:py-3 rounded-full shadow-md text-white mx-auto flex items-center gap-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +203,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z" />
               </svg>
-              <span class="text-white">ganti tema</span>
+              <span class="hidden text-white">ganti tema</span>
             `;
           } else {
             document.documentElement.classList.add('dark');
@@ -196,7 +213,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
                 <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
               </svg>
-              <span class="text-white">ganti tema</span>
+              <span class="hidden text-white">ganti tema</span>
             `;
           }
         };
@@ -212,7 +229,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
               <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
             </svg>
-            <span class="text-white">ganti tema</span>
+            <span class="hidden text-white">ganti tema</span>
           `;
           document.documentElement.classList.add('dark');
         } else {
@@ -231,7 +248,7 @@
                 d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"
               />
             </svg>
-            <span class="text-white">ganti tema</span>
+            <span class="hidden text-white">ganti tema</span>
           `;
           document.documentElement.classList.remove('dark');
         }

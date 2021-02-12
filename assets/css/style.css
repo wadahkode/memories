@@ -1,7 +1,27 @@
 body {
-  background: #333;
   margin: 0;
   padding: 0;
+  /* overflow: hidden; */
+}
+
+main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-docs.active::-webkit-scrollbar {
+  width: 4px;
+  display: none;
+}
+
+.sidebar-docs.active::-webkit-scrollbar-track-piece,
+main::-webkit-scrollbar-track-piece {
+  background-color: rgba(129, 129, 129, 0.253);
+}
+
+.sidebar-docs.active::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb {
+  background-color: rgb(196, 195, 195);
+  border-radius: 1rem;
 }
 
 /* .container {
@@ -126,6 +146,7 @@ footer {
 .sidebar-docs {
   position: fixed;
   left: 0;
+  transition: 0.3s ease-in-out all;
 }
 .sidebar-docs.active {
   /* background-color: #333; */
@@ -133,7 +154,8 @@ footer {
   height: 100%;
   top: 0%;
   left: 0%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
   transition: 0.3s ease-in-out all;
 }
 
