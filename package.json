@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/wadahkode/memories/issues"
   },
-  "homepage": "https://github.com/wadahkode/memories#readme",
+  "homepage": "https://wadahkode.github.io/memories/",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^7.18.0",
