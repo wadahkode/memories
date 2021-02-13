@@ -28,3 +28,10 @@
 <ul>
   <li>Support for timelist from database</li>
 </ul>
+
+### versi 1.1.82
+
+<ul>
+  <li>fix some mistakes</li>
+  <li>Provides support for use in the browser, if you know jquery now you can call it with Memories.</li>
+</ul>
