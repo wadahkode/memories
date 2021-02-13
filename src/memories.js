@@ -247,6 +247,8 @@ class Memories {
           : unPeriode > periode - this.timeListAgo(prefix)
           ? Math.floor(unPeriode / (periode - this.timeListAgo(prefix)))
           : false;
+
+      return compare;
     } else {
       prefix.map((name) => {
         compare =
@@ -258,8 +260,8 @@ class Memories {
             ? Math.floor(unPeriode / (periode - this.timeListAgo(name)))
             : false;
       });
+      return compare;
     }
-    return compare >= 1;
   }
 
   get get() {}

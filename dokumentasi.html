@@ -169,9 +169,34 @@
           Mulai sekarang
         </h1>
         <div
-          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 py-2 cursor-pointer flex"
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 @py-2 cursor-pointer flex"
         >
-          <a href="#how-to-install" class="w-screen">Cara install</a>
+          <a href="#how-to-install" class="w-screen py-2">Cara install</a>
+        </div>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 @py-2 cursor-pointer flex"
+        >
+          <a href="#timeago" class="w-screen py-2">Timeago</a>
+        </div>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 @py-2 cursor-pointer flex"
+        >
+          <a href="#expired" class="w-screen py-2">Expired</a>
+        </div>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 @py-2 cursor-pointer flex"
+        >
+          <a href="#schedule" class="w-screen py-2">Schedule</a>
+        </div>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 @py-2 cursor-pointer flex"
+        >
+          <a href="#countdown" class="w-screen py-2">Countdown</a>
+        </div>
+        <div
+          class="hover:bg-blue-500 hover:text-gray-50 dark:hover:bg-gray-700 ease-in-out duration-300 rounded px-4 @py-2 cursor-pointer flex"
+        >
+          <a href="#birthday" class="w-screen py-2">Birthday</a>
         </div>
       </aside>
       <!-- End sidebar -->
@@ -184,9 +209,11 @@
           class="bg-white dark:bg-transparent shadow-2xl dark:shadow-md col-start-2 col-span-4 mt-6 p-4 h-auto md:p-6 rounded md:col-start-2 md:col-span-4 md:mt-2 md:h-auto md:p-6 break-words"
         >
           <div class="mb-3 p-2 bg-green-500 text-white rounded">
-            <b>Pengumuman:</b> dokumentasi ini masih dalam tahap pengerjaan,
+            <b>Pengumuman:</b> dokumentasi ini sebagian besar sudah
+            diselesaikan, selamat menggunakan.
+            <!-- dokumentasi ini masih dalam tahap pengerjaan,
             lebih baik gunakan v1.1.81, setelah dokumentasi ini selesai versi
-            akan ditingkatkan sesuai dengan yang dibutuhkan.
+            akan ditingkatkan sesuai dengan yang dibutuhkan. -->
           </div>
           <h1 class="font-bold text-xl mb-4 md:text-3xl md:w-3/4 md:mb-4">
             Mulai cepat dengan pustaka memories, atur waktu anda menjadi seperti
@@ -388,8 +415,8 @@
                 Pembaruan terakhir
               </h1>
               <a
-                href=""
-                class="md:text-lg text-md font-semibold hover:text-blue-500"
+                href="#versi"
+                class="md:text-lg text-md font-semibold hover:text-blue-500 hidden"
                 >Lihat semua versi</a
               >
             </div>
@@ -696,103 +723,871 @@ console.log(moment.timeAgo('birthday'))
     </div>
 
     <div id="about-me" class="hidden">
-      <h1
-        class="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
-      >
-        Tentang memories
-      </h1>
-      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
-        Memories adalah sebuah library javascript yang digunakan untuk mengubah
-        format waktu menjadi sebuah momen seperti waktu lalu, kemudian
-        menentukan expired dari sebuah produk, membuat jadwal dan membuat
-        hitungan mundur.
-      </p>
-
-      <h1
-        class="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
-      >
-        Sejarah memories
-      </h1>
-      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
-        Berawal dari ketidaktahuan saya terhadap sebuah library javascript yaitu
-        <a href="https://momentjs.com/" class="text-blue-500">momentjs</a>, saya
-        membuat sendiri penghandle waktu untuk ditampilkan menjadi baru saja,
-        beberapa detik yang lalu, berapa menit yang lalu, berapa jam yang lalu,
-        berapa hari yang lalu, minggu, bulan dan tahun.
-      </p>
-      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
-        Awalnya memories hanya mendukung untuk memformat seperti diatas, tetapi
-        ketika ada seseorang yang bertanya pada sebuah group telegram, akhirnya
-        saya mengembangkan untuk mendukung lebih banyak format waktu.<br /><br />
-        dan berikut beberapa dukungan yang saat ini tersedia:<br />
-        <ul>
-          <li>
-            1. Timeago (Format waktu yang berlalu)
-          </li>
-          <li>
-            2. Expired (Menentukan kadaluarsa dari sebuah produk)
-          </li>
-          <li>
-            3. Schedule (Membuat sebuah jadwal waktu)
-          </li>
-          <li>
-            4. Countdown (Menghitung waktu mundur)
-          </li>
-          <li>
-            5. Birthday (Format waktu untuk umur)
-          </li>
-        </ul>
-      </p>
-      <h1
-        class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
-      >
-        Visi
-      </h1>
-      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
-        - Terus berkembang
-      </p>
-      <h1
-        class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
-      >
-        Misi
-      </h1>
-      <p class="w-4/4 my-3 md:w-3/4 md:my-3">
-        - Menjadi alternatif bagi yang mencari penanganan waktu berbahasa indonesia.
-      </p>
-      <h1
-        class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
-      >
-        Pembuat
-      </h1>
-      <div class="w-4/4 my-3 md:w-3/4 md:my-3 flex flex-col items-center gap-4 md:flex-none sm:flex-none md:grid md:grid-cols-4">
-        <div class="md:col-start-1">
-          <img class="w-36 h-36 rounded-full"
-            src="https://scontent.fsrg3-1.fna.fbcdn.net/v/t1.0-9/38562_102830739774500_4117273_n.jpg?_nc_cat=101&ccb=2&_nc_sid=ba80b0&_nc_eui2=AeE3BEiy5Y_h4Gb_RhCZGTGIlc3OiHmHlB-Vzc6IeYeUH-EvlUOl7XjqRNi78C9xO5xX6lsD61pXSEWfqzjZql7R&_nc_ohc=4MFgetVu0BoAX__RYrO&_nc_ht=scontent.fsrg3-1.fna&oh=d28e06635ece4b0469152c9e6b65a4c3&oe=6042ED26"
-          />
+      <div>
+        <div class="">
+          <h1
+            class="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Tentang memories
+          </h1>
         </div>
-        <div class="md:col-start-2 md:col-span-4">
-          Nama saya Ayus Irfang Filaras dari kota Tegal, Jawa Tengah.
-          Pendidikan saya hanya sampai Sekolah Menengah Pertama, mengenal dunia teknologi sejak menjadi operator warnet,
-          koding sudah menjadi hobi yang saya sukai.<br><br>
-          <i><b><u> Terus berkarya walaupun tak bernilai </u></b></i>
+        <div class="w-auto my-3">
+          Memories adalah sebuah library javascript yang digunakan untuk
+          mengubah format waktu menjadi sebuah momen seperti waktu lalu,
+          kemudian menentukan expired dari sebuah produk, membuat jadwal dan
+          membuat hitungan mundur.
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <h1
+            class="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Sejarah memories
+          </h1>
+        </div>
+        <div class="w-auto my-3">
+          Berawal dari ketidaktahuan saya terhadap sebuah library javascript
+          yaitu
+          <a href="https://momentjs.com/" class="text-blue-500">momentjs</a>,
+          saya membuat sendiri penghandle waktu untuk ditampilkan menjadi baru
+          saja, beberapa detik yang lalu, berapa menit yang lalu, berapa jam
+          yang lalu, berapa hari yang lalu, minggu, bulan dan tahun.<br /><br />
+          Awalnya memories hanya mendukung untuk memformat seperti diatas,
+          tetapi ketika ada seseorang yang bertanya pada sebuah group telegram,
+          akhirnya saya mengembangkan untuk mendukung lebih banyak format waktu.
+          dan berikut beberapa dukungan yang saat ini tersedia:
+        </div>
+        <ul>
+          <li>1. Timeago (Format waktu yang berlalu)</li>
+          <li>2. Expired (Menentukan kadaluarsa dari sebuah produk)</li>
+          <li>3. Schedule (Membuat sebuah jadwal waktu)</li>
+          <li>4. Countdown (Menghitung waktu mundur)</li>
+          <li>5. Birthday (Format waktu untuk umur)</li>
+        </ul>
+      </div>
+
+      <div>
+        <div>
+          <h1
+            class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Visi
+          </h1>
+        </div>
+        <div class="my-3 w-auto">- Terus berkembang</div>
+      </div>
+
+      <div>
+        <div>
+          <h1
+            class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Misi
+          </h1>
+        </div>
+        <div class="w-auto my-3">
+          - Menjadi alternatif bagi yang mencari penanganan waktu berbahasa
+          indonesia.
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <div>
+          <h1
+            class="my-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Pembuat
+          </h1>
+        </div>
+        <div
+          class="flex flex-wrap items-center justify-center gap-4 md:space-x-6 md:flex-nowrap"
+        >
+          <div class="md:flex-initial">
+            <img
+              class="w-36 h-36 rounded-full"
+              src="https://scontent.fsrg3-1.fna.fbcdn.net/v/t1.0-9/38562_102830739774500_4117273_n.jpg?_nc_cat=101&ccb=2&_nc_sid=ba80b0&_nc_eui2=AeE3BEiy5Y_h4Gb_RhCZGTGIlc3OiHmHlB-Vzc6IeYeUH-EvlUOl7XjqRNi78C9xO5xX6lsD61pXSEWfqzjZql7R&_nc_ohc=4MFgetVu0BoAX__RYrO&_nc_ht=scontent.fsrg3-1.fna&oh=d28e06635ece4b0469152c9e6b65a4c3&oe=6042ED26"
+            />
+          </div>
+          <div class="md:flex-1">
+            Nama saya Ayus Irfang Filaras dari kota Tegal, Jawa Tengah.
+            Pendidikan saya hanya sampai Sekolah Menengah Pertama, mengenal
+            dunia teknologi sejak menjadi operator warnet, koding sudah menjadi
+            hobi yang saya sukai.<br /><br />
+            <i
+              ><b><u> Terus berkarya walaupun tak bernilai </u></b></i
+            >
+          </div>
         </div>
       </div>
     </div>
 
     <div id="timeago" class="hidden">
-      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+      <div>
+        <div>
+          <h1
+            class="mb-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Timeago (Waktu lalu)
+          </h1>
+        </div>
+        <div>
+          Untuk mengubah format waktu timestamp menjadi waktu yang sudah
+          berlalu, hal yang pertama adalah kalian sudah membaca terlebih dahulu
+          <b class="text-blue-500">Cara install</b>, disana sudah dijelaskan
+          instalasi via CDN maupun NPM, jadi mari kita koding:
+
+          <h1 class="font-bold text-lg my-3">Menggunakan CDN</h1>
+          <div>
+            Jika kalian menggunakan CDN kalian tidak perlu repot-repot mengatur
+            ini dan mengatur itu, cukup buat sebuah element baru seperti dibawah
+            ini:
+            <ul>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 1</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1/1/1970, 00:00:00"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b><time datetime="1/1/1970, 00:00:00"></time></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 2</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970-1-1 00:00:00"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b><time datetime="1970-1-1 00:00:00"></time></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 3</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1-1-1970 00:00:00"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b><time datetime="1-1-1970 00:00:00"></time></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 4</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970 1 1 00:00:00"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b><time datetime="1970 1 1 00:00:00"></time></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 5</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Jun 09 2018 15:28:14" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Jun 09 2018 15:28:14"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 6</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Dec 2, 2017 2:39:58 AM" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Dec 2, 2017 2:39:58 AM"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 7</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 03 05:12:41.211 PDT" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 03 05:12:41.211 PDT"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 8</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 10 01:44:20.392" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 10 01:44:20.392"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="font-bold text-lg my-3">Menggunakan NPM</h1>
+          <div>
+            Menggunakan pustaka memories di lingkungan nodejs memang lebih
+            fleksibel, karena kita dapat mengatur apa saja yang diperlukan, oke
+            mari koding:
+            <pre
+              class="my-3"
+            ><code class="rounded border p-2 dark:border-transparent">const memories = require('@wadahkode/memories);<br>const moment = new memories();<br><br>moment.set('datetime', '1/1/1970, 00:00:00');<br>moment.set('language', 'id-ID');<br>moment.set('locale', {timeZone: 'Asia/Jakarta', hour12: false});<br><br>// waktu lalu tanpa parameter<br>moment.timeAgo();<br>// waktu lalu dengan kustom keluaran<br>moment.timeAgo('timeAgo', {<br>y: 'tahun yang lalu',<br>m: 'bulan yang lalu',<br>d: 'hari yang lalu',<br>h: 'jam yang lalu',<br>i: 'menit yang lalu',<br>s: 'detik yang lalu',<br>n: 'baru saja'<br>});<br>// mencetak umur<br>moment.timeAgo('birthday');</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Sedang istirahat sampai
+      <time datetime="2019–01–01 15:16:19" prefix=""></time> atau
+      <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time> -->
     </div>
 
     <div id="expired" class="hidden">
-      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+      <div>
+        <div>
+          <h1
+            class="mb-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Expired (Kadaluarsa)
+          </h1>
+        </div>
+        <div>
+          Untuk mengubah format waktu timestamp menjadi waktu yang menentukan
+          kapan sebuah produk kadaluarsa, hal yang pertama adalah kalian sudah
+          membaca terlebih dahulu
+          <b class="text-blue-500">Cara install</b>, disana sudah dijelaskan
+          instalasi via CDN maupun NPM, jadi mari kita koding:
+
+          <h1 class="font-bold text-lg my-3">Menggunakan CDN</h1>
+          <div>
+            Jika kalian menggunakan CDN kalian tidak perlu repot-repot mengatur
+            ini dan mengatur itu, cukup buat sebuah element baru seperti dibawah
+            ini:
+            <ul>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 1</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="3/1/1921, 00:00:00" prefix="expired"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="3/1/2021, 00:00:00" prefix="expired"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 2</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970-1-1 00:00:00" prefix="expired"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970-1-1 00:00:00" prefix="expired"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 3</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1-1-1970 00:00:00" prefix="expired"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1-1-1970 00:00:00" prefix="expired"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 4</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970 1 1 00:00:00" prefix="expired"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970 1 1 00:00:00" prefix="expired"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 5</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Jun 09 2021 15:28:14" prefix="expired" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Jun 09 2021 15:28:14"
+                    prefix="expired"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 6</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Dec 2, 2017 2:39:58 AM" prefix="expired" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Dec 2, 2017 2:39:58 AM"
+                    prefix="expired"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 7</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 03 05:12:41.211 PDT" prefix="expired" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 03 05:12:41.211 PDT"
+                    prefix="expired"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 8</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 10 01:44:20.392" prefix="expired" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 10 01:44:20.392"
+                    prefix="expired"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="font-bold text-lg my-3">Menggunakan NPM</h1>
+          <div>
+            Menggunakan pustaka memories di lingkungan nodejs memang lebih
+            fleksibel, karena kita dapat mengatur apa saja yang diperlukan, oke
+            mari koding:
+            <pre
+              class="my-3"
+            ><code class="rounded border p-2 dark:border-transparent">const memories = require('@wadahkode/memories);<br>const moment = new memories();<br><br>moment.set('datetime', '3/1/1921, 00:00:00');<br>moment.set('language', 'id-ID');<br>moment.set('locale', {timeZone: 'Asia/Jakarta', hour12: false});<br><br>// mencetak status kadaluarsa dari sebuah produk<br>moment.expired('year|month|day|hour|minute|second');</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Sedang istirahat sampai
+      <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau
+      <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time> -->
     </div>
 
     <div id="schedule" class="hidden">
-      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+      <div>
+        <div>
+          <h1
+            class="mb-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Schedule (Jadwal)
+          </h1>
+        </div>
+        <div>
+          Untuk mengubah format waktu timestamp dan membuat sebuah jadwal waktu,
+          hal yang pertama adalah kalian sudah membaca terlebih dahulu
+          <b class="text-blue-500">Cara install</b>, disana sudah dijelaskan
+          instalasi via CDN maupun NPM, jadi mari kita koding:
+
+          <h1 class="font-bold text-lg my-3">Menggunakan CDN</h1>
+          <div>
+            Jika kalian menggunakan CDN kalian tidak perlu repot-repot mengatur
+            ini dan mengatur itu, cukup buat sebuah element baru seperti dibawah
+            ini:
+            <ul>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 1</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="3/1/1921, 07:00:00" prefix="schedule"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="3/1/2021, 07:00:00" prefix="schedule"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 2</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970-1-1 07:00:00" prefix="schedule"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970-1-1 07:00:00" prefix="schedule"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 3</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1-1-1970 00:00:00" prefix="schedule"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1-1-1970 00:00:00" prefix="schedule"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 4</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970 1 1 00:00:00" prefix="schedule"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970 1 1 00:00:00" prefix="schedule"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 5</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Jun 09 2021 15:28:14" prefix="schedule" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Jun 09 2021 15:28:14"
+                    prefix="schedule"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 6</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Dec 2, 2017 2:39:58 AM" prefix="schedule" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Dec 2, 2017 2:39:58 AM"
+                    prefix="schedule"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 7</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 03 05:12:41.211 PDT" prefix="schedule" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 03 05:12:41.211 PDT"
+                    prefix="schedule"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 8</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 10 01:44:20.392" prefix="schedule" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 10 01:44:20.392"
+                    prefix="schedule"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="font-bold text-lg my-3">Menggunakan NPM</h1>
+          <div>
+            Menggunakan pustaka memories di lingkungan nodejs memang lebih
+            fleksibel, karena kita dapat mengatur apa saja yang diperlukan, oke
+            mari koding:
+            <pre
+              class="my-3"
+            ><code class="rounded border p-2 dark:border-transparent">const memories = require('@wadahkode/memories);<br>const moment = new memories();<br><br>moment.set('datetime', '3/1/1921, 00:00:00');<br>moment.set('language', 'id-ID');<br>moment.set('locale', {timeZone: 'Asia/Jakarta', hour12: false});<br><br>// mencetak status jadwal waktu yang ditentukan<br>moment.schedule('year|month|day|hour|minute|second');</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Sedang istirahat sampai
+      <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau
+      <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time> -->
     </div>
 
     <div id="countdown" class="hidden">
-      Sedang istirahat sampai <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time>
+      <div>
+        <div>
+          <h1
+            class="mb-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Countdown (Hitung waktu mundur)
+          </h1>
+        </div>
+        <div>
+          Untuk mengubah format waktu timestamp dan menghitung waktu mundur, hal
+          yang pertama adalah kalian sudah membaca terlebih dahulu
+          <b class="text-blue-500">Cara install</b>, disana sudah dijelaskan
+          instalasi via CDN maupun NPM, jadi mari kita koding:
+
+          <h1 class="font-bold text-lg my-3">Menggunakan CDN</h1>
+          <div>
+            Jika kalian menggunakan CDN kalian tidak perlu repot-repot mengatur
+            ini dan mengatur itu, cukup buat sebuah element baru seperti dibawah
+            ini:
+            <ul>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 1</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="3/1/1921, 07:00:00" prefix="countdown&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="3/1/2021, 07:00:00" prefix="countdown"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 2</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970-1-1 07:00:00" prefix="countdown"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970-1-1 07:00:00" prefix="countdown"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 3</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1-1-1970 00:00:00" prefix="countdown;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1-1-1970 00:00:00" prefix="countdown"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 4</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970 1 1 00:00:00" prefix="countdown"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970 1 1 00:00:00" prefix="countdown"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 5</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Jun 09 2021 15:28:14" prefix="countdown" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Jun 09 2021 15:28:14"
+                    prefix="countdown"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 6</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Dec 2, 2017 2:39:58 AM" prefix="countdown" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Dec 2, 2017 2:39:58 AM"
+                    prefix="countdown"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 7</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 03 05:12:41.211 PDT" prefix="countdown" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 03 05:12:41.211 PDT"
+                    prefix="countdown"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 8</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 10 01:44:20.392" prefix="countdown" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 10 01:44:20.392"
+                    prefix="countdown"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="font-bold text-lg my-3">Menggunakan NPM</h1>
+          <div>
+            Menggunakan pustaka memories di lingkungan nodejs memang lebih
+            fleksibel, karena kita dapat mengatur apa saja yang diperlukan, oke
+            mari koding:
+            <pre
+              class="my-3"
+            ><code class="rounded border p-2 dark:border-transparent">const memories = require('@wadahkode/memories);<br>const moment = new memories();<br><br>moment.set('datetime', '3/1/1921, 00:00:00');<br>moment.set('language', 'id-ID');<br>moment.set('locale', {timeZone: 'Asia/Jakarta', hour12: false});<br><br>// membuat hitungan waktu mundur<br>moment.countdown();</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Sedang istirahat sampai
+      <time datetime="2/13/2021, 02:30:00" prefix="countdown"></time> atau
+      <time datetime="2/13/2021, 05:30:00" prefix="countdown"></time> -->
+    </div>
+
+    <div id="birthday" class="hidden">
+      <div>
+        <div>
+          <h1
+            class="mb-3 text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold text-gray-600 dark:text-gray-50"
+          >
+            Birthday (Cetak umur)
+          </h1>
+        </div>
+        <div>
+          Untuk mengubah format waktu timestamp menjadi waktu yang sudah berlalu
+          sebagai umur, hal yang pertama adalah kalian sudah membaca terlebih
+          dahulu
+          <b class="text-blue-500">Cara install</b>, disana sudah dijelaskan
+          instalasi via CDN maupun NPM, jadi mari kita koding:
+
+          <h1 class="font-bold text-lg my-3">Menggunakan CDN</h1>
+          <div>
+            Jika kalian menggunakan CDN kalian tidak perlu repot-repot mengatur
+            ini dan mengatur itu, cukup buat sebuah element baru seperti dibawah
+            ini:
+            <ul>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 1</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1/1/1970, 00:00:00" prefix="birthday"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1/1/1970, 00:00:00" prefix="birthday"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 2</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970-1-1 00:00:00" prefix="birthday"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970-1-1 00:00:00" prefix="birthday"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 3</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1-1-1970 00:00:00" prefix="birthday"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1-1-1970 00:00:00" prefix="birthday"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 4</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="1970 1 1 00:00:00" prefix="birthday"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time datetime="1970 1 1 00:00:00" prefix="birthday"></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 5</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Jun 09 2018 15:28:14" prefix="birthday" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Jun 09 2018 15:28:14"
+                    prefix="birthday"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 6</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="Dec 2, 2017 2:39:58 AM" prefix="birthday" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="Dec 2, 2017 2:39:58 AM"
+                    prefix="birthday"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 7</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 03 05:12:41.211 PDT" prefix="birthday" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 03 05:12:41.211 PDT"
+                    prefix="birthday"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+              <li
+                class="my-3 bg-transparent border dark:bg-gray-900 p-2 rounded dark:border-transparent dark:shadow"
+              >
+                <h1 class="text-md font-semibold">Contoh 8</h1>
+                <pre
+                  class="my-3"
+                ><code class="rounded">&lt;time datetime="2017 Mar 10 01:44:20.392" prefix="birthday" lang="en-US" format="id-ID"&gt;&lt;/time&gt;</code></pre>
+                Hasil:
+                <b
+                  ><time
+                    datetime="2017 Mar 10 01:44:20.392"
+                    prefix="birthday"
+                    lang="en-US"
+                    format="id-ID"
+                  ></time
+                ></b>
+              </li>
+            </ul>
+          </div>
+
+          <h1 class="font-bold text-lg my-3">Menggunakan NPM</h1>
+          <div>
+            Menggunakan pustaka memories di lingkungan nodejs memang lebih
+            fleksibel, karena kita dapat mengatur apa saja yang diperlukan, oke
+            mari koding:
+            <pre
+              class="my-3"
+            ><code class="rounded border p-2 dark:border-transparent">const memories = require('@wadahkode/memories);<br>const moment = new memories();<br><br>moment.set('datetime', '1/1/1970, 00:00:00');<br>moment.set('language', 'id-ID');<br>moment.set('locale', {timeZone: 'Asia/Jakarta', hour12: false});<br><br>// mencetak umur<br>moment.timeAgo('birthday');</code></pre>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- End Content Collection -->
 

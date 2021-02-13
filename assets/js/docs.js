@@ -51,6 +51,9 @@ async function elementForPrinted(id) {
     case 'countdown':
       content = await countdown(id);
       break;
+    case 'birthday':
+      content = await birthday(id);
+      break;
   }
 
   return content;
@@ -64,7 +67,11 @@ const timeAgo = async (id) => document.getElementById(id).innerHTML;
 const expired = async (id) => document.getElementById(id).innerHTML;
 const schedule = async (id) => document.getElementById(id).innerHTML;
 const countdown = async (id) => document.getElementById(id).innerHTML;
+const birthday = async (id) => document.getElementById(id).innerHTML;
 
 document.querySelectorAll('a').forEach((item) => {
-  item.onclick = (e) => main(e);
+  item.onclick = (e) => {
+    container.scroll({ top: 0, behavior: 'smooth' });
+    main(e);
+  };
 });
