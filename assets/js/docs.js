@@ -18,7 +18,7 @@ function main(e) {
       if (response !== null) {
         statusElement = true;
         container.innerHTML = `
-          <div class="bg-white dark:bg-transparent rounded shadow-2xl dark:shadow-md mt-6 col-start-1 col-span-2 px-4 pt-4 pb-20 md:dark:bg-transparent md:col-start-2 md:col-span-4 md:mt-2 md:px-6 md:pb-20 md:pt-6">
+          <div class="bg-white dark:bg-transparent rounded shadow-2xl dark:shadow-md mt-6 col-start-1 col-span-2 px-4 pt-4 pb-20 md:dark:bg-transparent md:col-start-2 md:col-span-4 md:mt-2 md:px-6 md:pb-20 md:pt-6 sm:col-start-1 sm:col-span-4">
             ${response}
           </div>
         `;
