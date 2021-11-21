@@ -1,1 +1,17 @@
-{}
+{
+  "name": "wadahkode/memories",
+  "version": "1.1.82",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "wadahkode",
+      "email": "mvp.dedefilaras@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
+  }
+}
