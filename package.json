@@ -43,5 +43,9 @@
     "highlight.js": "^10.6.0",
     "postcss": "^8.2.5",
     "tailwindcss": "^2.0.3"
+  },
+  "engines": {
+    "node": "^16.4.0",
+    "npm": "^7.18.1"
   }
 }
